@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{float}
+\usepackage[caption = false]{subfig}
+\usepackage{/Users/timbarry/Documents/optionFiles/mymacros}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{ForestGreen}{#1}}
+\newcommand{\yellow}[1]{\textcolor{YellowOrange}{#1}}
+\usepackage[
+backend=biber,
+style=authoryear,
+maxcitenames=6,
+maxbibnames=6,
+backref=true,
+doi=false,
+isbn=false,
+url=false,
+eprint=false
+]{biblatex}
+\addbibresource{/Users/timbarry/optionFiles/Proposal.bib}
+
+\begin{document}
+
+\begin{center}
+\textbf{Annotated bibliography for proposal} \\
+Tim B.
+\end{center}
+
+This document is an annotated bibliography of references that might relate to my proposal. All papers are statistical (no biology or computing). The references fall into the following categories: randomization tests, $e$-values, multiple $p$-values, conditional independence tests (non-CRT/CPT), causal inference, and regression with Gaussian response. The references are color-coded: red, yellow, and green indicate high, moderate, and low importance, respectively.
+
+\section{Randomization tests}
+
+Randomization tests refer to tests that recompute a test statistic under a null hypothesis. The most important examples for our purposes are the permutation test, conditional randomization test, and conditional permutation test.
+
+\begin{enumerate}
+\item \red{\cite{Katsevich2020b}}.
+\item \red{\cite{Berrett2020}}.
+\item \red{\cite{Li2021}}.
+\item \yellow{\cite{Zhang2021}}.
+\item \yellow{\cite{Javanmard2021}}.
+\item \yellow{\cite{Zhong2021}}.
+\item \green{\cite{Dobriban2021}}.
+\end{enumerate}
+
+\section{$e$-values}
+
+\begin{enumerate}
+\item \red{\cite{Shafer2021}}.
+\item \red{\cite{Wang2020b}}.
+\item \red{\cite{Vovk2020}}.
+\item 
+\end{enumerate}
+
+\section{Multiple testing with $p$-values}
+
+\section{Conditional independence tests (non-CRT/CPT)}
+
+\printbibliography
+
+\end{document}
