@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx} 
+\usepackage{float}
+\usepackage[margin=1in]{geometry}
+\usepackage[caption = false]{subfig}
+\usepackage{/Users/timbarry/Documents/optionFiles/mymacros}
+\usepackage[
+backend=biber,
+style=authoryear,
+maxcitenames=2,
+maxbibnames=6,
+backref=true,
+doi=false,
+isbn=false,
+url=false,
+eprint=false
+]{biblatex}
+\addbibresource{/Users/timbarry/optionFiles/Proposal.bib}
+\newtheorem{proposition}{Proposition}
+
+\begin{document}
+
+\begin{center}
+\textbf{Paper proposal} \\
+Tim B
+\end{center}
+
+In this document I chart out several possible directions for a next statistics paper. The following keywords are relevant: randomization tests, conditional randomization/permutation tests, $e$-values, multiple hypothesis testing, testing/training on the same data, and sample splitting. I propose two main directions and a few tertiary directions.
+
+\section*{Direction 1: A more general framework for randomization tests}
+
+\subsection*{Motivation}
+
+Randomization tests are statistical tests in which a test statistic is recomputed over permuted, resampled, rotated, or otherwise transformed versions of the data to produce an empirical null distribution against which a statistic computed on the raw data is compared. Randomization tests are ubiquitous throughout all of statistics and science. For example, randomization tests commonly are used in neuroscience to perform nonparametric inference on GLMs (\cite{Winkler2014}) and in genetics to control for population stratification in GWAS (\cite{  }). See \cite{Dobriban2021} for a recent review and theoretical analysis of randomization tests. Despite their widespread popularity, randomization tests pose several practical challenges, especially in high-multiplicity settings: miscalibrated $p$-values can cause type-I error inflation; combining $p$-values from many hypotheses can result in excessively conservative or liberal discovery sets, especially when tests are dependent; and sample splitting -- a procedure required by certain randomization tests, such as the recently-proposed holdout randomization test (CITE) -- results in non-reproducible $p$-values.
+
+Building closely on the work of several authors (e.g., \cite{Wang2020b,Vovk2020,}) we propose a simple new framework for randomization tests that helps to resolve these challenges. The framework leverages $e$-values, test statistics that by definition have unit expectation under the null. We recover the standard, $p$-value based approach to randomization tests a special case of our framework. Although our theory applies broadly, we focus mostly on (marginal) permutation tests, conditional randomization tests, and conditional permutation tests as illustrative examples.
+
+Let $T^*$ be the test statistic computed on the raw data, and let $T_1, T_2 \dots, T_B$ be the \textit{ordered} test statistics recomputed on the permuted (or resampled, etc.) data. Define $I_i = \mathbb{I}(T^* \leq T_i).$ For given constants $a_0, a_1, \dots, a_B \in \R$, define $e$ by 
+$$e = a_0 + \sum_{i=1}^B a_i I_i,$$ where $e$ is subject to the constraint that $\E[e] = 1$. In other words, $e$ is an $e$-value that is a linear combination of the $I_i$s. We call $e$ a ``randomization test $e$-value (RT $e$-value)'' so as to distinguish it from other, more general $e$-values.
+
+\subsection*{Constructing test statistics $e$}
+
+We consider methods for constructing RT $e$-values, leveraging two key properties of the $I_i$s. First, because $T^*$ is i.i.d.\ with the $T_i$s, we have that $\P(T^* \leq T_i) = i/B.$ Therefore, $\E[I_i] = i/B.$ The second key property we state as a proposition.
+\begin{proposition}\label{thm:power_of_is}
+For $r,B \in \N,$ we have that
+$$ \left(\sum_{i=1}^B I_i\right)^r = \sum_{i=1}^B \left[ (B - i + 1)^r - (B - i)^r \right] I_i.$$ Equivalently, the $r$th power of the empirical $p$-value $p_B := \frac{1}{B} \sum_{i=1}^B  I_i $ is $$ p_B^r = \sum_{i=1}^B \left[ (1 - i/B + 1/B)^r - (1 - i/B)^r \right]I_i := \sum_{i=1}^B M(B,r,i) I_i.$$ Finally, for given a $x_0 \in \R$ and coefficients $c_0, c_1, \dots, c_B$, the polynomial $ \sum_{j=0}^r a_j(p_B - x_0)^j $
+
+\end{proposition}
+In other words, the $r$th power of the sum of the $I_i$s is an extremely simple linear combination of the $I_i$s, not some complicated multinomial expression. The proof of Proposition \ref{thm:power_of_is} is a combinatorial argument (see appendix); I have not seen this result -- although it is simple -- derived elsewhere.
+
+
+\section*{Direction 2: A class of fast and powerful test statistics for the conditional randomization (permutation) test}
+
+\section*{}
+
+\printbibliography
+\end{document}

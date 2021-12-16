@@ -91,20 +91,38 @@ $$\left( \sum_{i=1}^B I_i \right)^r = \sum_{s=1}^B M(B,r,s)I_s.$$ The number $M(
 \begin{multline*}
 \left(\frac{1}{B} \sum_{i=1}^B I_i\right)^r = (1/B)^r \sum_{i=1}^B \left[ (B-i+1)^r - (B-i)^r \right]I_i \\ = \sum_{i=1}^B \left[ (1 - i/B + 1/B)^r - (1 - i/B)^r \right] I_i.
 \end{multline*}
+All terms are easy to compute.
 
-
+\section{Checking correctness}
 
 Let us check this formula for specific values of $r$. First, setting $r = 1,$ we have $M(B,1,s) = (B - s + 1) - (B - s) = 1$. Therefore, $$\left(\sum_{i=1}^B I_s \right)^1 = \sum_{i=1}^B I_s.$$ Next, setting $r=2$, we have
 $$M(B,1,s) = (B+s-1)^2 - (B-s)^2  = 2B - 2i + 1.$$ Therefore,
 $$\left( \sum_{i=1}^B I_i \right)^2 = \sum_{i=1}^B [2B - 2i + 1]I_i,$$ which matches what we have above.
 
-\clearpage
-Overall, assuming the above is correct, we have two key properties of the $I_i$s. First, $\E(I_i) = i/B.$ Second, for an analytic function $f: \R \to \R$, we have that
-$$f\left(\frac{1}{B} \sum_{i=1}^B I_i \right) \approx C + \sum_{i=1}^B a_i  I_i,$$
-that is, we can approximate $f$ arbitrarily well with a linear combination of the $a_i$s. It follows from these properties that
-$$ \E\left[ f\left( \frac{1}{B} \sum_{i=1}^B I_i \right) \right] \approx C + \sum_{i=1}^B \frac{(a_i)i}{B}.$$ In other words, we can put the empirical $p$-value through any analytic function to obtain an (asymptotically exact) linear combining function. (Need simulations to demonstrate empirically). As a corollary, the binomial theorem implies that
-$$ f\left( \frac{1}{B} \sum_{i=1}^B I_i - x_0 \right)$$ is also approximately a linear combination.
+\section{Polynomials}
+We easily can compute a polynomial of $\sum_{i=1}^B I_i.$ We have that
+\begin{multline*}
+\left( \sum_{i=1}^B I_i - x_0 \right)^l = \sum_{k=0}^l \binom{l}{k} \left( \sum_{i=1}^B I_i \right)^k x_0^{l - k} \\ = x_0^{l} + \sum_{k=1}^l \binom{l}{k} \left( \sum_{i=1}^B I_i \right)^k x_0^{l-k}   \\ = x^l_0 + \sum_{k=1}^l \binom{l}{k} \left[\sum_{i=1}^B M(B,k,i) I_i  \right]x^{l-k}_0 \\ = x_0^l + \sum_{k = 1}^l \sum_{i=1}^B x_0^{l-k} \binom{l}{k} M(B,k,i) I_i \\ = x_0^l +\sum_{i=1}^B \left[\sum_{k=1}^l x_0^{l-k} \binom{l}{k} M(B,k,i) \right] I_i
+\end{multline*}
+Finally, for an integer $r$ and polynomial coefficients $a_0, a_1, \dots, a_r \in \R$, we have that
+\begin{multline*}
+\sum_{l=0}^r a_l \left(S - x_0 \right)^l = a_0 + \sum_{l=1}^r a_l (S - x_0)^l \\ = a_0 + \sum_{l=1}^r a_l \left[x_0^l + \sum_{i=1}^B \left[\sum_{k=1}^l x_0^{l-k} \binom{l}{k} M(B,k,i) \right] I_i \right] \\ = \left(a_0 + \sum_{l=1}^r a_l x_0^l \right) + \sum_{i=1}^B \left[ \sum_{l=1}^r \sum_{k=1}^l a_l x_0^{l-k} \binom{l}{k} M(B,k,i) \right] I_i.
+\end{multline*}
+Typically, we will have $a_l = f^{(l)}(x_0)/l!,$ where $f$ is a $p$-to-$e$ calibrator. This follows from the following $r$th order Taylor expansion:
+$$ f\left(\sum_{i=1}^BI_i \right) \approx \left(a_0 + \sum_{l=1}^r a_l x_0^l \right) + \sum_{i=1}^B \left[ \sum_{l=1}^r \sum_{k=1}^l \frac{f^{(l)}(x_0) x_0^{l-k} \binom{l}{k} M(B,k,i)}{l!} \right] I_i.$$ Of course, the above is a linear combination of the $I_i$s. We define
+$$ W(f, x_0, r, B, i) = \sum_{l=1}^r \sum_{k=1}^l \frac{f^{(l)}(x_0) x_0^{l-k} \binom{l}{k} M(B,k,i)}{l!}.$$  Therefore, we can write
+$$ f\left(\sum_{i=1}^B I_i \right) \approx \left(a_0 + \sum_{l=1}^r a_l x_0^l \right) + \sum_{i=1}^B W(f, x_0, r, B, i) T_i.$$
+In practice, we could compute the $W$ terms ahead of running the algorithm. We even could save these terms in within the package for common choices of $f,$ $x_0$, $r$, and $B$ (e.g., $f(p) = 2p^{-1}$, $x_0 = 1/2$, $r = 20$, $B = 1000$).
 
-We have that $$\sum_{i=1}^r a_r \left( \sum_{i=1}^B I_i \right)^r  = \sum_{i=1}^r \left( \sum_{i=1}^B a_r M(B,r,i) I_i \right) = \sum_{i=1}^B \left( I_i  \sum_{i=1}^r a_r M(B,r,i) \right).$$
+\section{$p$-to-$e$ calibrators}
+A decreasing function $f : [0,1] \to [0,\infty]$ is a $p$-to-$e$ calibrator if and only if $\int_0^1 f \leq 1.$ It is admissible if and only if $f$ is upper semicontinuous, $f(0) = \infty$, and $\int_0^1 f = 1.$ An example of a $p$-to-$e$ calibrator is
+$$f_\kappa(p) = \kappa p^{\kappa - 1}.$$
+We derive the Taylor series of $f$. First, we compute the derivatives of $f$. The first derivative is 
+$$f_\kappa^{(1)}(p) = \kappa(\kappa - 1) p^{\kappa - 2}.$$
+Meanwhile, the second derivative is
+$$f^{(2)}_\kappa(p) = \kappa(\kappa - 1) (\kappa - 2) p^{\kappa - 3}.$$ In general, we have that
+$$f^{(m)}_\kappa(p) = \prod_{j=0}^m (\kappa - j)p^{\kappa - m- 1}.$$ Therefore, the Taylor series of $f$ at $a$ is
+$$ f_\kappa(p) = \sum_{m=0}^\infty \frac{f^{(m)}(a)}{m!} (p - a)^m.$$
+
 
 \end{document}

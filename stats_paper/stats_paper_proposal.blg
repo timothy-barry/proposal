@@ -1,0 +1,17 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'stats_paper_proposal.blg'
+[29] biber-darwin:313> INFO - === Thu Dec 16, 2021, 00:08:27
+[46] Biber.pm:371> INFO - Reading 'stats_paper_proposal.bcf'
+[115] Biber.pm:857> INFO - Found 4 citekeys in bib section 0
+[125] Biber.pm:3976> INFO - Processing section 0
+[133] Biber.pm:4136> INFO - Looking for bibtex format file '/Users/timbarry/optionFiles/Proposal.bib' for section 0
+[136] bibtex.pm:1500> INFO - LaTeX decoding ...
+[179] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/timbarry/optionFiles/Proposal.bib'
+[197] Utils.pm:193> WARN - BibTeX subsystem: /var/folders/h6/pt59hmwd7rqb3jqfzwh0hlth0000gn/T/GBkvguspm8/Proposal.bib_56450.utf8, line 6, warning: 176 characters of junk seen at toplevel
+[207] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[207] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[207] Biber.pm:3804> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[207] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[215] bbl.pm:617> INFO - Writing 'stats_paper_proposal.bbl' with encoding 'UTF-8'
+[218] bbl.pm:720> INFO - Output to stats_paper_proposal.bbl
+[218] Biber.pm:110> INFO - WARNINGS: 1
