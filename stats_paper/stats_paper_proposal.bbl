@@ -59,6 +59,134 @@
       \verb http://arxiv.org/abs/2104.12260
       \endverb
     \endentry
+    \entry{Johnson2010}{article}{}
+      \name{author}{7}{}{%
+        {{uniquename=0,uniquepart=base,hash=db3477bb4c2e3d13bb9241d7c07f3fb5}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Randall\bibnamedelima C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=6ab74bfc89b00e35838bdafbadb1cd21}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={George\bibnamedelima W.},
+           giveni={G\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=210d7530673235fd3c759efae2e8e1af}{%
+           family={Troyer},
+           familyi={T\bibinitperiod},
+           given={Jennifer\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=fc681caaec7db0d732febe02301c0afc}{%
+           family={Lautenberger},
+           familyi={L\bibinitperiod},
+           given={James\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=e3b5bc18c5c3274b89f8f80a2d8317c9}{%
+           family={Kessing},
+           familyi={K\bibinitperiod},
+           given={Bailey\bibnamedelima D.},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=f9a573773dc7e1bb516bba6b750909d9}{%
+           family={Winkler},
+           familyi={W\bibinitperiod},
+           given={Cheryl\bibnamedelima A.},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=0c796739bad1bacabb1a055b32bc2e37}{%
+           family={O'Brien},
+           familyi={O\bibinitperiod},
+           given={Stephen\bibnamedelima J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{eb7350ca84a44283aa35812830f7db18}
+      \strng{fullhash}{502d565bb560c8102fad1cff88ffe684}
+      \strng{bibnamehash}{eb7350ca84a44283aa35812830f7db18}
+      \strng{authorbibnamehash}{eb7350ca84a44283aa35812830f7db18}
+      \strng{authornamehash}{eb7350ca84a44283aa35812830f7db18}
+      \strng{authorfullhash}{502d565bb560c8102fad1cff88ffe684}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Background: As we enter an era when testing millions of SNPs in a single gene association study will become the standard, consideration of multiple comparisons is an essential part of determining statistical significance. Bonferroni adjustments can be made but are conservative due to the preponderance of linkage disequilibrium (LD) between genetic markers, and permutation testing is not always a viable option. Three major classes of corrections have been proposed to correct the dependent nature of genetic data in Bonferroni adjustments: permutation testing and related alternatives, principal components analysis (PCA), and analysis of blocks of LD across the genome. We consider seven implementations of these commonly used methods using data from 1514 European American participants genotyped for 700,078 SNPs in a GWAS for AIDS.Results: A Bonferroni correction using the number of LD blocks found by the three algorithms implemented by Haploview resulted in an insufficiently conservative threshold, corresponding to a genome-wide significance level of $\alpha$ = 0.15 - 0.20. We observed a moderate increase in power when using PRESTO, SLIDE, and simpleℳ when compared with traditional Bonferroni methods for population data genotyped on the Affymetrix 6.0 platform in European Americans ($\alpha$ = 0.05 thresholds between 1 × 10-7and 7 × 10-8).Conclusions: Correcting for the number of LD blocks resulted in an anti-conservative Bonferroni adjustment. SLIDE and simpleℳ are particularly useful when using a statistical test not handled in optimized permutation testing packages, and genome-wide corrected p-values using SLIDE, are much easier to interpret for consumers of GWAS studies. {©} 2010 Johnson et al; licensee BioMed Central Ltd.}
+      \field{issn}{14712164}
+      \field{journaltitle}{BMC Genomics}
+      \field{number}{1}
+      \field{title}{{Accounting for multiple comparisons in a genome-wide association study (GWAS)}}
+      \field{volume}{11}
+      \field{year}{2010}
+      \field{pages}{2\bibrangedash 7}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1186/1471-2164-11-724
+      \endverb
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/Johnson2010.pdf:pdf
+      \endverb
+    \endentry
+    \entry{Tansey2021a}{article}{}
+      \name{author}{5}{}{%
+        {{uniquename=0,uniquepart=base,hash=11fdab9d3dd2445509156296b3caa442}{%
+           family={Tansey},
+           familyi={T\bibinitperiod},
+           given={Wesley},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=30db2f42d0dd8cf10ef82c5eae10096e}{%
+           family={Veitch},
+           familyi={V\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7d602c606bbdac9b7503677f466b90bc}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Haoran},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=b9758d46819149f72006ed88824cf06d}{%
+           family={Rabadan},
+           familyi={R\bibinitperiod},
+           given={Raul},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7441e4d372e854fc6d24d0d5a16a1687}{%
+           family={Blei},
+           familyi={B\bibinitperiod},
+           given={David\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{32492e1f1cf15dc761a936bb5233ac3d}
+      \strng{fullhash}{4bae8dd0d5cb62848186ea3593a0d60a}
+      \strng{bibnamehash}{4bae8dd0d5cb62848186ea3593a0d60a}
+      \strng{authorbibnamehash}{4bae8dd0d5cb62848186ea3593a0d60a}
+      \strng{authornamehash}{32492e1f1cf15dc761a936bb5233ac3d}
+      \strng{authorfullhash}{4bae8dd0d5cb62848186ea3593a0d60a}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We propose the holdout randomization test (HRT), an approach to feature selection using black box predictivemodels. TheHRT is a specializedversion of theconditional randomization test (CRT) that usesdata splitting for feasible computation. The HRT works with any predictive model and produces a valid p-value for each feature. To make the HRT more practical, we propose a set of extensions to maximize power and speed up computation. In simulations, these extensions lead to greater power than a competing knockoffs- based approach, without sacrificing control of the error rate. We apply the HRT to two case studies from the scientific literature where heuristics were originally used to select important features for predictive models. The results illustratehowsuchheuristics canbe misleading relative to principled methods like theHRT. Code is available at https://github.com/tansey/hrt. Supplementary materials for this article are available online.}
+      \field{journaltitle}{Journal of Computational and Graphical Statistics}
+      \field{title}{{The Holdout Randomization Test for Feature Selection in Black Box Models Wesley}}
+      \field{year}{2021}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/hrt{\_}2021.pdf:pdf
+      \endverb
+    \endentry
     \entry{Vovk2020}{article}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=bef6907ff5daebb69843cf35c8af1a83}{%
@@ -98,6 +226,54 @@
       \verb{url}
       \verb http://alrw.net/e
       \endverb
+    \endentry
+    \entry{Vovk2021b}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=bef6907ff5daebb69843cf35c8af1a83}{%
+           family={Vovk},
+           familyi={V\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7ef1db76b008346b5aae55fe27c64483}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Ruodu},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{abdc3790d75ac8d5989a0755689bacfe}
+      \strng{fullhash}{abdc3790d75ac8d5989a0755689bacfe}
+      \strng{bibnamehash}{abdc3790d75ac8d5989a0755689bacfe}
+      \strng{authorbibnamehash}{abdc3790d75ac8d5989a0755689bacfe}
+      \strng{authornamehash}{abdc3790d75ac8d5989a0755689bacfe}
+      \strng{authorfullhash}{abdc3790d75ac8d5989a0755689bacfe}
+      \field{sortinit}{V}
+      \field{sortinithash}{75dd7385c90b2252c3ae853a80ca853b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Multiple testing of a single hypothesis and testing multiple hypotheses are usually done in terms of p-values. In this paper, we replace p-values with their natural competitor, e-values, which are closely related to betting, Bayes factors and likelihood ratios. We demonstrate that e-values are often mathematically more tractable; in particular, in multiple testing of a single hypothesis, e-values can be merged simply by averaging them. This allows us to develop efficient procedures using e-values for testing multiple hypotheses.}
+      \field{eprinttype}{arXiv}
+      \field{issn}{21688966}
+      \field{journaltitle}{Annals of Statistics}
+      \field{number}{3}
+      \field{title}{{E-values: Calibration, combination and applications}}
+      \field{volume}{49}
+      \field{year}{2021}
+      \field{pages}{1736\bibrangedash 1754}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1214/20-AOS2020
+      \endverb
+      \verb{eprint}
+      \verb 1912.06116
+      \endverb
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/vovk{\_}wang{\_}2021.pdf:pdf
+      \endverb
+      \keyw{Admissible decisions,Bayes factor,Global null,Hypothesis testing,Multiple hypothesis testing,Test martingale}
     \endentry
     \entry{Wang2020b}{article}{}
       \name{author}{2}{}{%
