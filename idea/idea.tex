@@ -124,5 +124,90 @@ $$f^{(2)}_\kappa(p) = \kappa(\kappa - 1) (\kappa - 2) p^{\kappa - 3}.$$ In gener
 $$f^{(m)}_\kappa(p) = \prod_{j=0}^m (\kappa - j)p^{\kappa - m- 1}.$$ Therefore, the Taylor series of $f$ at $a$ is
 $$ f_\kappa(p) = \sum_{m=0}^\infty \frac{f^{(m)}(a)}{m!} (p - a)^m.$$
 
+\section{Order stat probability}
+
+Let $Y, T_1, \dots, T_B \sim F$. Suppose that $F$ is supported on the real line (the bounded case is similar). Let $X = T_{(B)}$ be the maximum over the $T_i$s. The cumulative density function $F_X$ of $X$ is $F_X(x) = [F(x)]^n$. Further, $F_Y(y)  = F(y).$ We have that
+\begin{multline*}
+\P(Y \leq X) = \int_{-\infty}^{\infty} \int_{y}^\infty f(y)f(x) dx dy = \int_{-\infty}^\infty f(y) \left[ \int_{y}^\infty f(x) dx \right] dy \\ = \int_{-\infty}^\infty f(y) \left[ F_X(\infty) - F_X(y) \right] dy = \int_{-\infty}^\infty f(y) [1 - (F(y))^n] dy \\= \int_{-\infty}^\infty f(y) - f(y)F(y)^n dy = F(y) - \frac{1}{n+1}[F(y)]^{n+1} \big|^\infty_{-\infty} = 1 - \frac{1}{n+1} = \frac{n}{n+1}.
+\end{multline*}
+
+Now, in the case that $r = n$, we have that $F_X(x) = [F(x)]^n$, and the problem is easy (see above). We now consider the more general case. We have the basic identity
+$$ \int_{-\infty}^\infty f(y) F^m(y) dy = \frac{1}{m+1}.$$
+We want to show that $$\P(Y \leq X_r) = 1 - \frac{n + 1 - r}{n+1} = \frac{r}{n+1}.$$ For a given function $F_{X_r}(y),$ let $L(F_{X_r}(y))$ denote the linear operation
+$$ L(F_{X_r}(y)) = \int_{-\infty}^\infty f(y) F_{X_r}(y) dy.$$ We equivalently want to show that
+$$ L(F_{X_r}(y)) = \frac{n+1-r}{n+1},$$
+where
+$$F_{X_r}(y) = \sum_{j=r}^n \binom{n}{j} [F(y)]^j[1 - F(y)]^{n-j}$$
+
+For example, when $r=n$, $F_{X_n}(y) = [F(y)]^n,$ so $L(F_{X_n}(y)) = \frac{1}{n+1}.$ Next, when $r = n - 1$,
+$$F_{X_{n-1}}(y) = \binom{n}{n-1} [F(y)]^{n-1} [1 - F(y)] + F_{X_n}(y).$$
+Considering the first piece, we have that
+\begin{multline*}
+L( n[F(y)]^{n-1}[1-F(y)]) = nL( F^{n-1}(y) - F^n(y)) = n \left( \frac{1}{n} - \frac{1}{n+1} \right) \\ = 1 - \frac{n}{n+1} = \frac{1}{n+1}.
+\end{multline*}
+Combining both pieces,
+$$ L(F_{X_{n-1}}(y)) = \frac{1}{n+1} + \frac{1}{n+1} = \frac{2}{n+1} .$$
+Next, we examine
+$$F_{X_{n-2}}(y) = \binom{n}{n-2} [F(y)]^{n-2} [1 - F(y)]^{2} + F_{X-1}(y).$$
+Focusing on the first piece, we have that
+\begin{multline*}
+F^{n-2}(y)[1 - F(y)]^2 = F^{n-2}(y) (1 - 2F(y) + F^2(y)) \\ = F^{n-2}(y) - 2 F^{n-1}(y) + F^n(y).
+\end{multline*}
+Applying the linear operator and multiplying by the binomial coefficient,
+\begin{multline*}
+\binom{n}{n-1} \left[ L( F^{n-2}(y) - 2 F^{n-1}(y) + F^n(y))\right] = \binom{n}{n-1}\left[ \frac{1}{n-1} -\frac{2}{n} + \frac{1}{n+1} \right] \\ = \frac{1}{n+1}.
+\end{multline*}
+Therefore, $L(F_{X-2}(y)) = 3/(n+1),$ as desired. Next, let $r \in \{1, \dots, n\}$ be arbitrary. We want to show that
+$$\binom{n}{r} L\left( F^r(y) [1 - F(y)]^{n-r}\right) = \frac{1}{n+1}.$$ 
+The binomial theorem implies
+$$[1- F(y)]^{n-r} = \sum_{k=0}^{n-r} \binom{n-r}{k} F^{k}(y) (-1)^k,$$ and so
+$$F^{r}(y) [1 - F(y)]^{n-r} = \sum_{k=0}^{n-r} \binom{n-r}{k} F^{k+r}(y) (-1)^k,$$ implying
+$$ \binom{n}{r}L( F^{r}(y) [1 - F(y)]^{n-r} ) = \binom{n}{r} \sum_{k=0}^{n-r} \binom{n-r}{k} \frac{(-1)^k}{k+r+1} := Q(n,r).$$
+Surry 2004 Corollary 2.2 implies
+$$ \sum_{k=1}^{n-r} \binom{n-r}{k} \frac{(-1)^k}{k+r+1} = \frac{1}{ (n+1) \binom{n}{r}}.$$ Therefore,
+$$\binom{n}{r} L(F^r(y)[1 - F(y)]^{n-r}) = \frac{1}{n+1}.$$
+We conclude that 
+$$ L(F_{X_r}(y)) = \frac{n+1-r}{n+1},$$
+implying $$\P(Y \leq X_r) = \frac{r}{n+1},$$ as desired.
+
+
+% We also can write
+%$$Q(n,r) = \sum_{k=0}^{n-r} \binom{n}{r+k} \binom{r+k}{r} \frac{(-1)^k}{k+r+1}.$$
+%For fixed $r$ and $n+1$, we have
+%\begin{multline*}
+%Q(n,r) = \sum_{k=0}^{n-r} \binom{n}{r+k} \binom{r+k}{r} \frac{(-1)^k}{k+r+1} \\ = \sum_{k=0}^{n+1-r} \binom{n+1}{r+k} \binom{r+k}{r} \frac{(-1)^k}{k+r+1} \\ = \sum_{k=0}^{n+1-r} \left[ \binom{n}{r+k} + \binom{n}{r+k-1} \right] \binom{r+k}{r} \frac{(-1)^k}{k+r+1} \\ = \sum_{k=0}^{n+1-r} \binom{n}{r+k} \binom{r+k}{r} \frac{(-1)^k}{k+r+1} + \sum_{k=0}^{n+1-r}  \binom{n}{r+k-1} \binom{r+k}{r} \frac{(-1)^k}{k+r+1}
+% \end{multline*}
+%\\ \noindent
+%\textbf{Base case}: Let $n = r$. Then $$Q(n,n) = \binom{ n }{ n } \sum_{k=0}^{n-n} \binom{n-n}{k} \frac{(-1)^k}{k + n + 1} = \frac{1}{0 + n + 1} = \frac{1}{n+1}.$$
+%\textbf{Assumption}: For some $n > r,$ assume that the formula holds, i.e.
+%$$Q(n,r) = \binom{n}{r} \sum_{k=0}^{n-r} \binom{n-r}{k} \frac{(-1)^k}{k + r + 1} = \frac{1}{n+1}.$$
+%\textbf{Induction step}: We consider the case of $n+1;$ we seek to show that $Q(n+1,r) = 1/(n+2).$ Now,
+%\begin{multline*}
+%Q(n+1, r) = \binom{n+1}{r} \sum_{k=0}^{n+1-r} \binom{n+1-r}{k} \frac{(-1)^k}{k + r + 1} \\ = \left[ \binom{n}{r} + \binom{n}{r-1} \right] \sum_{k=0}^{n+1-r} \left[\binom{n - r}{k} + \binom{n-r}{k-1} \right ]  \frac{(-1)^k}{k + r + 1}
+%\end{multline*}
+
+
+%First, for given $c_i, a_i \in \R$ and $i \in \Z^{\geq 0}$, we have that
+%$$t'(x) = \frac{d}{dx} a_i (x-c_i) \log^i(x) = a_i \log^i(x) + (1/x)(a_i)(i)(x - c_i)\log^{i-1}(x) .$$ Next, we have that
+%$$
+%b'(x) = \frac{d}{dx} x^{r+1} \log^{r+2}(x) = x^{r}(r+1) \log^{r+2}(x) + x^{r} (r + 2)\log^{r+1}(x).
+%$$
+%Thus, suppose that we have constants $a_0, \dots, a_r$ and $c_0, \dots, c_r$ such that
+%$$h(x) = \frac{\sum_{i=0}^r a_i(x - c_i) \log^i(x)}{x^{r+1} \log^{r+2}(x)} = \frac{t(x)}{b(x)}.$$
+%Now, we evaluate $t'$. We have that
+%\begin{multline*}
+%t'(x) = \sum_{i=0}^r a_i \log^i(x) + (1/x)(a_i)(i)(x - c_i)\log^{i-1}(x) \\ = a_r \log^{r}(x) + \sum_{i=1}^{r-1} \log^{i}(x) \left[ a_{i-1} + (1/x)(a_i)(i)(x-c_i) \right].
+%\end{multline*}
+%We additionally have that
+%$$t(x) = a_0(x-c_0) + \left[\sum_{i=1}^{r-1} a_i(x-c_i)\log^i(x)\right] + (a_r)(x-c_r)\log^r(x).$$
+%Hence,
+%$$
+%t'(x) b(x)  = b(x) a_r \log^r(x) + b(x) \sum_{i=1}^{r-1} \log^{i}(x) \left[ a_{i-1} + (1/x)(a_i)(i)(x-c_i) \right]. 
+%$$
+%Next,
+%\begin{multline*}
+%t'(x) = \sum_{i=0}^r a_i \log^i(x) + (1/x)(a_i)(i)(x - c_i)\log^{i-1}(x) = \\ a_0 + \left[ a_1 \log^1(x) + (1/x) (a_1)(1)(x-c_1) \log^0(x) \right] \\ + [ a_2 \log^2(x) + (1/x)(a_2)(2)(x-c_2) \log^1(x) ] \\ + [a_3\log^3(x) + (1/x)(a_3)(3)(x-c_3)\log^2(x)] \dots \\ + [a_{r-1} \log^{r-1}(x) + (1/x) a_{r-1}(r-1)\log^{r-2}(x)] \\ + [ a_r \log^r(x) + (1/x)(a_r)(r)(x - c_r) \log^{r-1}(x)] \\ \\ = [a_0\log^0(x) + (1/x)(a_1)(1)(x-c_1)\log^0(x)] \\ + [ a_1 \log^1(x) + (1/x)(a_2)(2)(x-c_2)\log^1(x)] \\ + [a_2 \log^2(x) + (1/x) (a_3)(3)(x-c_3)\log^2(x)] + \dots \\ + [a_{r-1} \log^{r-1}(x) + (1/x)(a_r)(r)(x-c_r)\log^{r-1}(x)] + a_r\log^r(x) \\ = 
+%a_r \log^{r}(x) + \sum_{i=0}^{r-1} \log^{i}(x) \left[ a_{i-1} + (1/x) a_i(i)(x-c_i) \right].
+%\end{multline*}
 
 \end{document}

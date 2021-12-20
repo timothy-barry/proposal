@@ -132,6 +132,52 @@
       \verb :Users/timbarry/research{\_}papers/Johnson2010.pdf:pdf
       \endverb
     \endentry
+    \entry{Sury2004}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=8c74b08693a2c7c952838c8468af6705}{%
+           family={Sury},
+           familyi={S\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=e784d01b89a091f3850f265093c9cec8}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Tianming},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=4ef8c89b3ed0a6a3df1c760d6c77790a}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Feng-Zhen},
+           giveni={F\bibinithyphendelim Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{46ff9b851711eea139f87fe6ce37d4a7}
+      \strng{fullhash}{2f0a915dd97c28258db82a31fb5fd4b9}
+      \strng{bibnamehash}{2f0a915dd97c28258db82a31fb5fd4b9}
+      \strng{authorbibnamehash}{2f0a915dd97c28258db82a31fb5fd4b9}
+      \strng{authornamehash}{46ff9b851711eea139f87fe6ce37d4a7}
+      \strng{authorfullhash}{2f0a915dd97c28258db82a31fb5fd4b9}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper, we deal with several combinatorial sums and some infinite series which involve the reciprocals of binomial coefficients. Many binomial identities as well as some polynomial identities are proved.}
+      \field{journaltitle}{Journal of Integer Sequences}
+      \field{number}{2}
+      \field{title}{{Identities Involving Reciprocals of Binomial Coefficients}}
+      \field{volume}{7}
+      \field{year}{2004}
+      \field{pages}{3}
+      \range{pages}{1}
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/binomial{\_}coefficient{\_}ids.pdf:pdf
+      \endverb
+      \keyw{clock sequence,conway-hofstadter {\$}10,conway-hofstadter-fibonaccilike structure,integer sequence,investigate relationship,nonlinear recursion,particular k-sequences,previous term,related underlying sequence}
+    \endentry
     \entry{Tansey2021a}{article}{}
       \name{author}{5}{}{%
         {{uniquename=0,uniquepart=base,hash=11fdab9d3dd2445509156296b3caa442}{%

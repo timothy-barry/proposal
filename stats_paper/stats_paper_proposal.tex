@@ -20,6 +20,7 @@ eprint=false
 ]{biblatex}
 \addbibresource{/Users/timbarry/optionFiles/Proposal.bib}
 \newtheorem{proposition}{Proposition}
+\allowdisplaybreaks
 
 \begin{document}
 
@@ -28,48 +29,88 @@ eprint=false
 Tim B
 \end{center}
 
-In this document I chart out several ideas for a next statistics (as opposed to genomics) paper. The following keywords are applicable: randomization tests, conditional randomization/permutation tests, $e$-values, multiple hypothesis testing, sample splitting, kernels, online model training. I propose two main directions and a few tertiary directions. I also suggest a genomics application.
+In this document I chart out several ideas for a next statistics paper. The following keywords are relevant: randomization tests, conditional randomization/permutation tests, $e$-values, multiple hypothesis testing, sample splitting, testing/training on same data, online learning. I propose two main directions and a few tertiary directions. I also suggest a genomics application.
 
 \section*{Direction 1: A more general framework for randomization tests}
 
 \subsection*{Motivation}
 
-Randomization tests are statistical tests in which a test statistic is recomputed over permuted, resampled, rotated, or otherwise transformed versions of the data to produce an empirical null distribution against which a statistic computed on the raw data is compared. Randomization tests are ubiquitous throughout all of statistics and science. For example, randomization tests routinely are used in neuroscience to perform nonparametric inference on GLMs (\cite{Winkler2014}) and in genetics to test the association of SNPs (\cite{Johnson2010}) and for other purposes. See \cite{Dobriban2021} for a recent review and unifying theoretical analysis of randomization tests. Despite their widespread popularity, randomization tests pose several practical challenges, especially in high-multiplicity settings: miscalibrated $p$-values can cause type-I error inflation; combining $p$-values across many hypothesis tests can result in excessively conservative or liberal discovery sets, especially when tests are dependent; and sample splitting -- a procedure required by certain randomization tests, such as the recently-proposed holdout randomization test (\cite{Tansey2021a}) -- can result in non-reproducible $p$-values.
+Randomization tests are tests in which a statistic is recomputed over permuted, resampled, rotated, or otherwise transformed versions of the data to produce an empirical null distribution against which a statistic computed on the raw data is compared. Randomization tests are ubiquitous throughout all of statistics and science. For example, randomization tests routinely are used in neuroscience to perform nonparametric inference on GLMs (\cite{Winkler2014}) and in genetics to test the association of SNPs (\cite{Johnson2010}). See \cite{Dobriban2021} for a recent review and unifying theoretical analysis of randomization tests. Despite their widespread popularity, randomization tests pose several practical challenges, especially in high-multiplicity settings: miscalibrated $p$-values can cause type-I error inflation; combining $p$-values across many hypothesis tests can result in excessively conservative or liberal discovery sets, especially when tests are dependent; and sample splitting -- a procedure required by certain randomization tests, such as the recently-proposed holdout randomization test (\cite{Tansey2021a}) -- can result in non-reproducible $p$-values.
 
-Building closely on the work of several authors (e.g., \cite{Wang2020b,Vovk2020,Vovk2021b}) we propose a simple new framework for randomization tests that helps to resolve these challenges. The framework leverages $e$-values, test statistics that by definition have unit expectation under the null. We recover the standard, $p$-value based approach to randomization tests a special case of our framework. Although our theory applies broadly, we focus mostly on (marginal) permutation tests, conditional randomization tests, and conditional permutation tests as illustrative examples.
+Building closely on the work of several authors (\cite{Wang2020b,Vovk2020,Vovk2021b}) we propose a simple new framework for randomization testing that helps to resolve these challenges. The framework leverages $e$-values, test statistics that by definition have (at most) unit expectation under the null. We capture the standard, $p$-value based approach to randomization testing a special case of our framework. Although the theory applies broadly, we focus mostly on (marginal) permutation tests, conditional randomization tests, and conditional permutation tests as illustrative examples.
 
-Let $T^*$ be the test statistic computed on the raw data, and let $T_1, T_2 \dots, T_B$ be the \textit{ordered} test statistics recomputed on the permuted (or resampled, etc.) data. (We assume for the time being that there are no ties.) Define $I_i = \mathbb{I}(T^* \leq T_i).$ For given constants $a_0, a_1, \dots, a_B \in \R$, define $e$ by 
-$$e = a_0 + \sum_{i=1}^B a_i I_i,$$ where $e$ is subject to the constraint that $\E[e] = 1$ under the null hypothesis. In other words, $e$ is an $e$-value that is a linear combination of the $I_i$s. We call $e$ a ``randomization test $e$-value (RT $e$-value)'' so as to distinguish it from other, more general $e$-values.
+Let $T^*$ be the test statistic computed on the raw data, and let $T_1, T_2 \dots, T_B$ be the \textit{ordered} test statistics recomputed on the permuted (or resampled, etc.) data. We assume for simplicity that there are no ties among the $T_i$s, although this assumption does not impact the theory much. Define $I_i = \mathbb{I}(T^* \leq T_i).$ For given constants $a_0, a_1, \dots, a_B \in \R$, define the test statistic $e$ by 
+$$e = a_0 + \sum_{i=1}^B a_i I_i,$$ where $e$ is subject to the constraint that $\E[e] = 1$ under the null hypothesis. In other words, $e$ is an $e$-value that is a linear combination of the $I_i$s. We call $e$ a ``linear $e$-value'' so as to distinguish it from other, more general $e$-values.
 
-\subsection*{Constructing RT $e$-values}
+\subsection*{Two key properties of the $I_i$s}
 
-We consider methods for constructing RT $e$-values, leveraging two key properties of the $I_i$s. First, because $T^*$ is i.i.d.\ with the $T_i$s, we have that $\P(T^* \leq T_i) = i/B.$ Therefore, $\E[I_i] = i/B.$ We state the second key property as a proposition.
+We state two key properties of the $I_i$s that enable us to construct linear $e$-values. We defer the proofs -- which are combinatorial in nature -- to the appendix. The first proposition gives the expectation of $I_i$.
+
+\begin{proposition}
+Let $T^*, X_1, \dots, X_B \sim F$ for some distribution $F$. Let $T_1, \dots, T_B$ be the order statistics of the $X_i$s. For $i \in \{1, \dots, B\}$, $$\P(T^* \leq T_i) = \frac{i}{B+1}.$$ Therefore, setting $I_i = \mathbb{I}(T^* \leq T_i),$ it follows $E[I_i] = i/(B+1).$
+\end{proposition}
+Intuitively, the $T_i$s define $B+1$ ``slots'': the slot before $T_1$, the slot after $T_1$ and before $T_2$, and so on, up until the slot after $T_B$. The probability that $T^*$ is less than $T_i$ is equal to the probability that $T^*$ lands in one of the first $i$ slots, which is $i/(B+1)$. The second proposition derives a simple expression for the $r$th power of the sum of the $I_i$s.
+
 \begin{proposition}\label{thm:power_of_is}
-For $r,B \in \N,$ we have that
+For $r,B \in \N,$
 $$ \left(\sum_{i=1}^B I_i\right)^r = \sum_{i=1}^B \left[ (B - i + 1)^r - (B - i)^r \right] I_i.$$ Equivalently, the $r$th power of the empirical right-sided $p$-value $p_B := \frac{1}{B} \sum_{i=1}^B  I_i $ is $$ p_B^r = \sum_{i=1}^B \left[ (1 - i/B + 1/B)^r - (1 - i/B)^r \right]I_i := \sum_{i=1}^B M(B,r,i) I_i.$$ Finally, for given $x_0 \in \R$ and coefficients $c_0, c_1, \dots, c_r \in \R$, the $r$th degree polynomial $\sum_{j=0}^r c_j(p_B - x_0)^j$ is given by
 $$
 \sum_{j=0}^r c_j(p_B - x_0)^j = \left( a_0 + \sum_{j=1}^r a_j x_0^j \right) + \sum_{i=1}^B \left[ \sum_{j=1}^r \sum_{k=1}^j a_j x^{j-k}_0 \binom{j}{k} M( B,k,i ) \right] I_i.
 $$
 \end{proposition}
-This proposition states that the $r$th power of the sum of the $I_i$s is a simple linear combination of the $I_i$s, not a messy multinomial expression as one might initially expect. Equivalently, the $r$th power of the empirical right-sided $p$-value (i.e., $p_B = (1/B) \sum_{i=1}^B I_i$) is a simple linear combination of the $I_i$s. Finally, the $r$th degree polynomial of $p_B$ centered at $x_0$ with coefficients $c_0, \dots, c_r$ is a straightforward extension of the above. The proof of Proposition \ref{thm:power_of_is} is a combinatorial argument (see appendix). This result is very simple, but we have not seen it elsewhere.
+In other words, the $r$th power of the sum of the $I_i$s is a simple linear combination of the $I_i$s, not a messy multinomial expression as one might initially expect. Equivalently, the $r$th power of the empirical right-sided $p$-value (i.e., $p_B = (1/B) \sum_{i=1}^B I_i$) is a simple linear combination of the $I_i$s. Finally, the $r$th degree polynomial of $p_B$ centered at $x_0$ with coefficients $c_0, \dots, c_r$ is a straightforward extension of the above.
 
-We provide two quick examples of specific RT $e$-values. Then, we describe a general and flexible procedure for producing powerful RT $e$-values.
+\subsection*{Constructing linear $e$-values}
 
-\textbf{Example 1: A quick algebraic example.}
+We give several examples of constructing linear $e$-values.
+
+\textbf{Example 1: Warmup.}
 
 \textbf{Example 2: Recovering $p$-values as a special case.}
 
-\textbf{Example 3: Powerful RT $e$-values via $p$-to-$e$ calibrators.}
+\textbf{Example 3: Powerful linear $e$-values via $p$-to-$e$ calibrators.}  We outline a general and flexible strategy for producing powerful linear $e$-values. Vovk and Wang introduced the notion of a \textit{$p$-to-$e$ calibrator}, which is a function that transforms a $p$-value into an $e$-value (\cite{Vovk2021b}). A $p$-to-$e$ calibrator $f$ satisfies the following properties: (i) $f$ is defined on $[0,1]$; (ii) $f$ is nonnegative; (iii) $f$ is decreasing; and (iv) $f$ integrates to (at most) $1$. Vovk and Wang furthermore defined the notion of an ``admissible'' $p$-to-$e$ calibrator, which roughly speaking is a calibrator that is ``good'' (or at least ``not bad''), i.e.\ it yields powerful $e$-values.  An admissible calibrator $f$ satisfies the following additional properties: (i) $f$ is left-continuous; (ii) $f(0) = \infty$; and (iii) $f$ integrates to \textit{exactly} 1. To illustrate the above definitions, let $f$ be an admissible $p$-to-$e$ calibrator, and let $P \sim U(0,1)$ be a uniformly distributed random variable with cumulative density function $G(p) = p$. We have by LOTUS that $\E[f(P)] = \int_{0}^1 f(p) d G(p) = \int_0^1 f = 1.$ 
+
+Vovk, Wang, and Ramdas introduced several examples of $p$-to-$e$ calibrators. First, for given $\kappa \in (0,1),$ define the function $f_\kappa : [0,1] \to \R^{\geq 0}$ by $f_\kappa(p) = \kappa p^{\kappa-1}$. It is easy to check that $f_\kappa$ satisfies the properties listed above and is therefore an admissible $p$-to-$e$ calibrator. Next, define $g: [0,1] \to \R^{\geq 0}$ by
+$$ g(p) = \frac{1 - p + p \ln(p)}{ p \log^2(p)}.$$ The function $g$ also is an admissible $p$-to-$e$ calibrator, although this is a bit harder to check.
+
+We propose a general procedure for constructing linear $e$-values using $p$-to-$e$ calibrators. The $j$th derivative of the $p$-to-$e$ calibrator $f_\kappa$ is $$f_\kappa^{(j)}(p) = \prod_{i=0}^j (i - j)p^{\kappa - j - 1}.$$
+
+% We will need the derivatives of the $p$-to-$e$ calibrator. For $j \in \N$, the $j$th derivative of $f_\kappa$ is
+% $$f_\kappa^{(j)}(p) = \prod_{i=0}^j (i - j)p^{\kappa - j - 1}.$$ 
+
 
 \section*{Direction 2: A class of fast and powerful test statistics for the conditional randomization (permutation) test}
-
 % Lin reg
 % ridge reg
-% kernel ridge reg
+% kernel ridge reg (possibly)
+
+\section{Other considerations}
+% - an $e$-value version of Selective SeqStep+.
+% - Testing and training on same data?
+% - Double-robustness? In particular, we are moving away from the known X|Z assumption here. 
 
 \printbibliography
 \begin{appendices}
-We provide a proof of Proposition \ref{thm:power_of_is}. Define the set $C(r,B)$ by
+\subsection*{Proposition 1 proof}
+Suppose without loss of generality that $F$ is supported on the real line (the proof is similar in the case of bounded $F$).  For notational simplicity, let $Y = T^*$. Denote the density of $F$ by $f$ (i.e., $f = F'$). Denote the density of $Y$, $T_i$, and $(Y,T_i)$ by $f_Y = f$, $f_{T_i}$, and $f_{Y, T_i}$ respectively. Standard distributional theory on order statistics indicates that the CDF $F_{T_i}$ of $T_i$ is given by $$ F_{T_i}(t) = \sum_{j=i}^B \binom{B}{j}[F(t)]^j [1 - F(t)]^{B-j}.$$ Meanwhile, the CDF $F_Y$ of $Y$ is given by $F_Y = F$. We seek to show that $\P(Y \leq T_i) = i/(B+1).$ We have that
+\begin{multline}\label{pf_6}
+\P(Y \leq T_i) = \int_{-\infty}^{\infty} \int_{y}^\infty f_{Y,T_i}(y,t) dt dy = \int_{-\infty}^{\infty} \int_{y}^\infty f_Y(y)f_{T_i}(t) dt dy \\ = \int_{-\infty}^\infty f(y) \left[\int_{y}^\infty f_{T_i}(t) dt \right] dy = \int_{-\infty}^\infty f(y) \left[ F_{T_i}(\infty) - F_{T_i}(y) \right] dy = 1 - \int_{-\infty}^\infty f(y) F_{T_i}(y)dy. 
+\end{multline}
+The problem reduces to evaluating the integral in the final equality of (\ref{pf_6}). We have that
+\begin{multline}\label{pf_7}
+\int_{-\infty}^\infty f(y) T_{T_i}(y) dy = \int_{-\infty}^\infty f(y) \sum_{j=i}^B \binom{B}{j}F^j(y) [1 - F(y)]^{B-j}dt \\ = \int_{-\infty}^\infty f(y) \sum_{j=i}^B \binom{B}{j} F^j(y) \sum_{k=0}^{B-j}\binom{B-j}{k} (-1)^k F^k(y) dt\\ = \sum_{j=i}^B \binom{B}{j} \sum_{k=0}^{B-j} \binom{B-j}{k}(-1)^k\int_{-\infty}^\infty f(y) F^{j+k}(y) dy \\ = \sum_{j=i}^B \binom{B}{j} \sum_{k=0}^{B-j} \binom{B-j}{k} (-1)^k \left[ \frac{1}{1+j+k} F^{j+k+1}(y)|^\infty_{-\infty} \right] \\ = \sum_{j=i}^B \binom{B}{j} \sum_{k=0}^{B-j} \binom{B-j}{k} (-1)^k \left[ \frac{1}{1+j+k}\right].
+\end{multline}
+\cite{Sury2004} (Corollary 2.2) showed that
+$$ \sum_{k=0}^{B-j} (-1)^k \binom{B-j}{k} \frac{1}{1 + j + k} = \frac{1}{(B + 1) \binom{ B  }{j}}.$$
+Substituting the above into (\ref{pf_7}), we obtain.
+\begin{multline}\label{pf_8}
+\sum_{j=i}^B \binom{B}{j} \sum_{k=0}^{B-j} \binom{B-j}{k} (-1)^k \left[ \frac{1}{1+j+k}\right] =  \\ \sum_{j=i}^B \binom{B}{j} \frac{1}{(B+1)\binom{B}{j}} = \sum_{j=i}^B \frac{1}{B+1} = \frac{B-i+1}{B+1}.
+\end{multline}
+Finally, combining (\ref{pf_6}), (\ref{pf_7}), and (\ref{pf_8}), we conclude that
+$$\P(Y \leq T_i) = \P(T^* \leq T_i) = \frac{B+1}{B+1} - \frac{B-i+1}{B+1} = \frac{i}{B+1}.$$
+
+\subsection*{Proposition 2 proof}
+Define the set $C(r,B)$ by
 $$C(r,B) := \left\{ (k_1, \dots, k_B) \in \{0, \dots, r\}^B : \sum_{i=1}^B k_i = r \right\},$$ i.e., $C(r,B)$ is the set of length-$B$ tuples of integers from $0$ to $r$ such that the elements of the tuple sum to $r$. Next, let the function $\tau: C(r,B) \to \{ 1, \dots, B \}$ be defined by
 $$ \tau(k_1, \dots, k_B) = \min\left\{ i \in \{ 1, \dots, B \} : k_i \geq 1 \right\},$$
 i.e., $\tau(k_1, \dots, k_B)$ is the position of the minimal nonzero element of a $(k_1, \dots, k_B)$. Finally, let $\tau^{-1}$ be the pre-image of of $\tau$. It is easy to see that, for $i \in \{0, \dots, B\}$,
@@ -114,9 +155,8 @@ Finally, let $c_0, c_1, \dots, c_r \in \R$ be polynomial coefficients. We have t
 \end{multline*}
 completing the proof.
 
-% be the set of tuples of length $B$ of integers from $0$ to $r$ such that the elements of the tuple sum to $r$.
 
-	
-	
+
+
 \end{appendices}
 \end{document}
