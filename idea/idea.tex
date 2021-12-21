@@ -170,6 +170,23 @@ We conclude that
 $$ L(F_{X_r}(y)) = \frac{n+1-r}{n+1},$$
 implying $$\P(Y \leq X_r) = \frac{r}{n+1},$$ as desired.
 
+Suppose without loss of generality that $F$ is supported on the real line (the proof is similar in the case of bounded $F$).  For notational simplicity, let $Y = T^*$. Denote the density of $F$ by $f$ (i.e., $f = F'$). Denote the density of $Y$, $T_i$, and $(Y,T_i)$ by $f_Y = f$, $f_{T_i}$, and $f_{Y, T_i}$ respectively. Standard distributional theory on order statistics indicates that the CDF $F_{T_i}$ of $T_i$ is given by $$ F_{T_i}(t) = \sum_{j=i}^B \binom{B}{j}[F(t)]^j [1 - F(t)]^{B-j}.$$ Meanwhile, the CDF $F_Y$ of $Y$ is given by $F_Y = F$. We seek to show that $\P(Y \leq T_i) = i/(B+1).$ We have that
+\begin{multline}\label{pf_6}
+\P(Y \leq T_i) = \int_{-\infty}^{\infty} \int_{y}^\infty f_{Y,T_i}(y,t) dt dy = \int_{-\infty}^{\infty} \int_{y}^\infty f_Y(y)f_{T_i}(t) dt dy \\ = \int_{-\infty}^\infty f(y) \left[\int_{y}^\infty f_{T_i}(t) dt \right] dy = \int_{-\infty}^\infty f(y) \left[ F_{T_i}(\infty) - F_{T_i}(y) \right] dy = 1 - \int_{-\infty}^\infty f(y) F_{T_i}(y)dy. 
+\end{multline}
+The problem reduces to evaluating the integral in the final equality of (\ref{pf_6}). We have that
+\begin{multline}\label{pf_7}
+\int_{-\infty}^\infty f(y) T_{T_i}(y) dy = \int_{-\infty}^\infty f(y) \sum_{j=i}^B \binom{B}{j}F^j(y) [1 - F(y)]^{B-j}dt \\ = \int_{-\infty}^\infty f(y) \sum_{j=i}^B \binom{B}{j} F^j(y) \sum_{k=0}^{B-j}\binom{B-j}{k} (-1)^k F^k(y) dt\\ = \sum_{j=i}^B \binom{B}{j} \sum_{k=0}^{B-j} \binom{B-j}{k}(-1)^k\int_{-\infty}^\infty f(y) F^{j+k}(y) dy \\ = \sum_{j=i}^B \binom{B}{j} \sum_{k=0}^{B-j} \binom{B-j}{k} (-1)^k \left[ \frac{1}{1+j+k} F^{j+k+1}(y)|^\infty_{-\infty} \right] \\ = \sum_{j=i}^B \binom{B}{j} \sum_{k=0}^{B-j} \binom{B-j}{k} (-1)^k \left[ \frac{1}{1+j+k}\right].
+\end{multline}
+\cite{Sury2004} (Corollary 2.2) showed that
+$$ \sum_{k=0}^{B-j} (-1)^k \binom{B-j}{k} \frac{1}{1 + j + k} = \frac{1}{(B + 1) \binom{ B  }{j}}.$$
+Substituting the above into (\ref{pf_7}), we obtain.
+\begin{multline}\label{pf_8}
+\sum_{j=i}^B \binom{B}{j} \sum_{k=0}^{B-j} \binom{B-j}{k} (-1)^k \left[ \frac{1}{1+j+k}\right] =  \\ \sum_{j=i}^B \binom{B}{j} \frac{1}{(B+1)\binom{B}{j}} = \sum_{j=i}^B \frac{1}{B+1} = \frac{B-i+1}{B+1}.
+\end{multline}
+Finally, combining (\ref{pf_6}), (\ref{pf_7}), and (\ref{pf_8}), we conclude that
+$$\P(Y \leq T_i) = \P(T^* \leq T_i) = \frac{B+1}{B+1} - \frac{B-i+1}{B+1} = \frac{i}{B+1}.$$
+
 
 % We also can write
 %$$Q(n,r) = \sum_{k=0}^{n-r} \binom{n}{r+k} \binom{r+k}{r} \frac{(-1)^k}{k+r+1}.$$

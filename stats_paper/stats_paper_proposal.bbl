@@ -132,51 +132,46 @@
       \verb :Users/timbarry/research{\_}papers/Johnson2010.pdf:pdf
       \endverb
     \endentry
-    \entry{Sury2004}{article}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,uniquepart=base,hash=8c74b08693a2c7c952838c8468af6705}{%
-           family={Sury},
-           familyi={S\bibinitperiod},
-           given={B.},
-           giveni={B\bibinitperiod},
-           givenun=0}}%
-        {{uniquename=0,uniquepart=base,hash=e784d01b89a091f3850f265093c9cec8}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Tianming},
-           giveni={T\bibinitperiod},
-           givenun=0}}%
-        {{uniquename=0,uniquepart=base,hash=4ef8c89b3ed0a6a3df1c760d6c77790a}{%
-           family={Zhao},
-           familyi={Z\bibinitperiod},
-           given={Feng-Zhen},
-           giveni={F\bibinithyphendelim Z\bibinitperiod},
+    \entry{Kuchibhotla2020}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=b1a5eb02af8879e0faf4e2346d6d0a69}{%
+           family={Kuchibhotla},
+           familyi={K\bibinitperiod},
+           given={Arun\bibnamedelima Kumar},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{46ff9b851711eea139f87fe6ce37d4a7}
-      \strng{fullhash}{2f0a915dd97c28258db82a31fb5fd4b9}
-      \strng{bibnamehash}{2f0a915dd97c28258db82a31fb5fd4b9}
-      \strng{authorbibnamehash}{2f0a915dd97c28258db82a31fb5fd4b9}
-      \strng{authornamehash}{46ff9b851711eea139f87fe6ce37d4a7}
-      \strng{authorfullhash}{2f0a915dd97c28258db82a31fb5fd4b9}
-      \field{sortinit}{S}
-      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \strng{namehash}{b1a5eb02af8879e0faf4e2346d6d0a69}
+      \strng{fullhash}{b1a5eb02af8879e0faf4e2346d6d0a69}
+      \strng{bibnamehash}{b1a5eb02af8879e0faf4e2346d6d0a69}
+      \strng{authorbibnamehash}{b1a5eb02af8879e0faf4e2346d6d0a69}
+      \strng{authornamehash}{b1a5eb02af8879e0faf4e2346d6d0a69}
+      \strng{authorfullhash}{b1a5eb02af8879e0faf4e2346d6d0a69}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{In this paper, we deal with several combinatorial sums and some infinite series which involve the reciprocals of binomial coefficients. Many binomial identities as well as some polynomial identities are proved.}
-      \field{journaltitle}{Journal of Integer Sequences}
-      \field{number}{2}
-      \field{title}{{Identities Involving Reciprocals of Binomial Coefficients}}
-      \field{volume}{7}
-      \field{year}{2004}
-      \field{pages}{3}
-      \range{pages}{1}
-      \verb{file}
-      \verb :Users/timbarry/research{\_}papers/binomial{\_}coefficient{\_}ids.pdf:pdf
+      \field{abstract}{Conformal prediction has been a very popular method of distribution-free predictive inference in recent years in machine learning and statistics. Its popularity stems from the fact that it works as a wrapper around any prediction algorithm such as neural networks or random forests. Exchangeability is at the core of the validity of conformal prediction. The concept of exchangeability is also at the core of rank tests widely known in nonparametric statistics. In this paper, we review the concept of exchangeability and discuss the implications for conformal prediction and rank tests. We provide a low-level introduction to these topics, and discuss the similarities between conformal prediction and rank tests.}
+      \field{eprinttype}{arXiv}
+      \field{issn}{2331-8422}
+      \field{title}{{Exchangeability, Conformal Prediction, and Rank Tests}}
+      \field{year}{2020}
+      \field{pages}{1\bibrangedash 36}
+      \range{pages}{36}
+      \verb{eprint}
+      \verb 2005.06095
       \endverb
-      \keyw{clock sequence,conway-hofstadter {\$}10,conway-hofstadter-fibonaccilike structure,integer sequence,investigate relationship,nonlinear recursion,particular k-sequences,previous term,related underlying sequence}
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/arun{\_}2021{\_}exchangeability.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2005.06095
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2005.06095
+      \endverb
     \endentry
     \entry{Tansey2021a}{article}{}
       \name{author}{5}{}{%
