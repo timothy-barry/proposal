@@ -1,17 +1,17 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'stats_paper_proposal.blg'
-[33] biber-darwin:313> INFO - === Mon Dec 20, 2021, 22:40:40
-[52] Biber.pm:371> INFO - Reading 'stats_paper_proposal.bcf'
-[124] Biber.pm:857> INFO - Found 8 citekeys in bib section 0
-[135] Biber.pm:3976> INFO - Processing section 0
-[144] Biber.pm:4136> INFO - Looking for bibtex format file '/Users/timbarry/optionFiles/Proposal.bib' for section 0
-[149] bibtex.pm:1500> INFO - LaTeX decoding ...
-[210] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/timbarry/optionFiles/Proposal.bib'
-[254] Utils.pm:193> WARN - BibTeX subsystem: /var/folders/h6/pt59hmwd7rqb3jqfzwh0hlth0000gn/T/YuXLAa7Gry/Proposal.bib_12888.utf8, line 6, warning: 176 characters of junk seen at toplevel
-[270] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[271] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[271] Biber.pm:3804> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[271] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[282] bbl.pm:617> INFO - Writing 'stats_paper_proposal.bbl' with encoding 'UTF-8'
-[289] bbl.pm:720> INFO - Output to stats_paper_proposal.bbl
-[289] Biber.pm:110> INFO - WARNINGS: 1
+[29] biber-darwin:313> INFO - === Thu Dec 23, 2021, 13:31:41
+[50] Biber.pm:371> INFO - Reading 'stats_paper_proposal.bcf'
+[131] Biber.pm:857> INFO - Found 12 citekeys in bib section 0
+[144] Biber.pm:3976> INFO - Processing section 0
+[157] Biber.pm:4136> INFO - Looking for bibtex format file '/Users/timbarry/optionFiles/Proposal.bib' for section 0
+[163] bibtex.pm:1500> INFO - LaTeX decoding ...
+[246] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/timbarry/optionFiles/Proposal.bib'
+[322] Utils.pm:193> WARN - BibTeX subsystem: /var/folders/h6/pt59hmwd7rqb3jqfzwh0hlth0000gn/T/d7dc8jXfOY/Proposal.bib_19931.utf8, line 6, warning: 176 characters of junk seen at toplevel
+[346] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[346] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[346] Biber.pm:3804> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[346] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[364] bbl.pm:617> INFO - Writing 'stats_paper_proposal.bbl' with encoding 'UTF-8'
+[382] bbl.pm:720> INFO - Output to stats_paper_proposal.bbl
+[382] Biber.pm:110> INFO - WARNINGS: 1

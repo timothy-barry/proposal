@@ -29,21 +29,21 @@ eprint=false
 Tim B
 \end{center}
 
-In this document I chart out several ideas for a next statistics paper. The following keywords are relevant: randomization tests, conditional randomization/permutation tests, $e$-values, multiple hypothesis testing, sample splitting, exchangeability, and online learning. I propose two main directions and a few tertiary directions. I also suggest a genomics application.
+In this document I chart out several ideas for a next statistics paper. The following keywords are relevant: randomization tests, conditional randomization/permutation tests, $e$-values, multiple hypothesis testing, sample splitting, robustness, and online learning. I propose two main directions and a few tertiary directions. I also suggest a CRISPR genomics application.
 
 \section*{Direction 1: A more general framework for randomization tests}
 
 \subsection*{Motivation and background}
 
-Randomization tests are tests in which a statistic is recomputed over permuted, resampled, rotated, or otherwise transformed versions of the data to produce an empirical null distribution against which a statistic computed on the raw data is compared. Randomization tests are ubiquitous throughout all of statistics and science. For example, randomization tests routinely are used in neuroscience to perform nonparametric inference on GLMs (\cite{Winkler2014}) and in genetics to test the association of SNPs (\cite{Johnson2010}). See \cite{Dobriban2021} for a recent review and unifying theoretical analysis of randomization tests. Despite their widespread popularity, randomization tests pose several practical challenges, especially in high-multiplicity settings: miscalibrated $p$-values can cause type-I error inflation; combining $p$-values across many hypothesis tests can result in excessively conservative or liberal discovery sets, especially when tests are dependent; and sample splitting -- a procedure required by certain randomization tests, such as the recently-proposed, ML-based holdout randomization test (\cite{Tansey2021a}) -- can result in non-reproducible $p$-values.
+Randomization tests are tests in which a statistic is recomputed over permuted, resampled, rotated, or otherwise transformed versions of the data to produce an empirical null distribution against which a statistic computed on the raw data is compared. Randomization tests are ubiquitous throughout all of statistics and science. For example, randomization tests routinely are used in genetics to assess the association of SNPs (\cite{Johnson2010}) and to test the differential expression of genes (\cite{Maleki2020}) and in neuroscience to improve the robustness of GLMs in the analysis of brain imaging data (\cite{Winkler2014}). % See \cite{Dobriban2021} for a recent review and unifying theoretical analysis of randomization tests.
+Despite their widespread popularity, randomization tests pose several practical challenges, especially in high-multiplicity settings: miscalibrated $p$-values can cause type-I error inflation; combining $p$-values across many hypothesis tests can result in excessively conservative or liberal discovery sets, especially when tests are dependent; and sample splitting -- a procedure required by certain randomization tests, such as the recently-proposed, ML-based holdout randomization test (\cite{Tansey2021a}) -- can result in non-reproducible $p$-values.
 
 Building closely on the work of several authors (\cite{Wang2020b,Vovk2020,Vovk2021b}), we propose a simple new framework for randomization testing that helps to resolve these challenges. The framework leverages $e$-values, test statistics that by definition are nonnegative and have (at most) unit expectation under the null. We capture the standard, $p$-value based approach to randomization testing a special case of our framework. Although the theory applies broadly, we focus mostly on (marginal) permutation tests, conditional randomization tests, and conditional permutation tests as illustrative examples.
 
-Let $T^*$ be the test statistic computed on the raw data, and let $T_1, T_2 \dots, T_B$ be the test statistics recomputed on the permuted (or resampled, etc.) data. We assume for simplicity that there are no ties among the $T_i$s, although this assumption has minimal impact on the theory.  Randomization tests satisfy the following key invariance property: the vector $(T^*, T_1, T_2, \dots, T_B)$ is \textit{exchangeable} under the null hypothesis, meaning that the cumulative distribution function of $(T^*, T_1, T_2, \dots, T_B)$ is invariant to permutations. Exchangeability implies that the empirical $p$-value
-$$ p_B =  \frac{1 + \sum_{i=1}^B \mathbb{I}\left(T^* \leq T_i \right) }{B+1}$$ is valid, i.e., $p_B$ stochastically dominates the uniform distribution. The standard practice to reject the null hypothesis at level $\alpha \in (0,1)$ if $p_B < \alpha$. In high multiplicity settings a multiple hypothesis testing correction procedure (typically BH) is applied to produce a discovery set with nominal FDR control.
+As a brief review, let $T^*$ be the test statistic computed on the raw data, and let $T_1, T_2 \dots, T_B$ be the test statistics recomputed on the permuted (or resampled, etc.) data. We assume for simplicity that there are no ties among the $T_i$s, although this assumption has minimal impact on the theory.  Randomization tests satisfy the following key invariance property: the vector $(T^*, T_1, T_2, \dots, T_B)$ is \textit{exchangeable} under the null hypothesis. This means that the cumulative distribution function of $(T^*, T_1, T_2, \dots, T_B)$ is invariant to permutations. Exchangeability implies that the empirical $p$-value
+$$ p_B =  \frac{\sum_{i=1}^B \mathbb{I}\left(T^* \leq T_i \right) }{B}$$ is valid, i.e., $p$ stochastically dominates the uniform distribution. (One often adds a $1$ to both the numerator and denominator to ensure finite-sample correctness, but for large $B$, the two expressions coincide almost exactly.) The standard practice is to reject the null hypothesis at level $\alpha \in (0,1)$ if $p < \alpha$, adjusting for multiple testing (typically via BH) to control FDR in high multiplicity settings.
 
 \subsection*{Linear $e$-values}
-
 
 We propose a more general framework for randomization testing based on $e$-values. For $i \in \{1, \dots, B\}$, let $T_{(1)}, \dots, T_{(B)}$ be the order statistics of  $T_1, \dots, T_B$. Define $I_i = \mathbb{I}(T^* \leq T_{(i)}).$ For given constants $a_0, a_1, \dots, a_B \in \R$, define the test statistic $e$ by 
 \begin{equation}\label{lin_e_def}
@@ -56,51 +56,96 @@ For $i \in \{1, \dots, B\}$, $\E[I_i] = i/(B+1).$
 \end{proposition}
 \textbf{Proof}: The vector $(T^*, T_1, \dots, T_n)$ is exchangeable. Therefore, by Corollary 1 of (\cite{Kuchibhotla2020}),  $$\P\left[\textrm{rank}(T^*) \leq i\right] = \frac{i}{1+B},$$ where $$\textrm{rank}(T^*) = | \{ j \in \{1, \dots, B\} :  T_j \leq T^*  \} | + 1$$ is the rank of $T^*$. But $\textrm{rank}(T^*) = i$ if and only if $T^* \leq T_{(i)}$. Therefore, $\P( T^* \leq T_{(i)}) = i/(B+1)$, implying the conclusion. $\square$
 \\ \\
-The next proposition derives a simple expression for the $r$th power of the sum of the $I_i$s.
+The next proposition derives a simple expression for the $r$th power of the sum of the $I_i$s (proof deferred to appendix).
 \begin{proposition}\label{thm:power_of_is}
 For $r,B \in \N,$
 $$ \left(\sum_{i=1}^B I_i\right)^r = \sum_{i=1}^B \left[ (B - i + 1)^r - (B - i)^r \right] I_i.$$ Equivalently, the $r$th power of the empirical right-sided $p$-value $p_B := \frac{1}{B} \sum_{i=1}^B  I_i $ is $$ p_B^r = \sum_{i=1}^B \left[ (1 - i/B + 1/B)^r - (1 - i/B)^r \right]I_i := \sum_{i=1}^B M(B,r,i) I_i.$$ Finally, for given $x_0 \in \R$ and coefficients $c_0, c_1, \dots, c_r \in \R$, the $r$th degree polynomial $\sum_{j=0}^r c_j(p_B - x_0)^j$ is given by
 $$
-\sum_{j=0}^r c_j(p_B - x_0)^j = \left( a_0 + \sum_{j=1}^r a_j x_0^j \right) + \sum_{i=1}^B \left[ \sum_{j=1}^r \sum_{k=1}^j a_j x^{j-k}_0 \binom{j}{k} M( B,k,i ) \right] I_i.
+\sum_{j=0}^r c_j(p_B - x_0)^j = \sum_{j=0}^r c_j x_0^j(-1)^j + \sum_{i=1}^B \left[\sum_{j=1}^r \sum_{k=1}^j c_j x^{j-k}_0 \binom{j}{k}(-1)^{j-k} M(B,k,i) \right] I_i.
 $$
 \end{proposition}
 In other words, the $r$th power of the sum of the $I_i$s is a simple linear combination of the $I_i$s, not a messy multinomial expression as one might initially expect. Equivalently, the $r$th power of the empirical right-sided $p$-value (i.e., $p_B = (1/B) \sum_{i=1}^B I_i$) is a simple linear combination of the $I_i$s. Finally, the $r$th degree polynomial of $p_B$ centered at $x_0$ with coefficients $c_0, \dots, c_r$ is a straightforward extension of the above. This result, though simple, is to the best of our knowledge new.
 
-\subsection*{Constructing linear $e$-values}
+\subsection*{Examples of linear $e$-values}
 
 Using the above propositions, we construct several example linear $e$-values.
-\\ \\  \noindent
+\\ \\ \noindent
 \textbf{Example 1: Warmup.} Setting $a_i = (B+1)/i$ and $c = 0$ in definition (\ref{lin_e_def}), we obtain
 $$e = (B+1)\sum_{i=1}^B \frac{I_i}{i}.$$ The variable $e$ clearly is nonnegative. Moreover, $$ \E(e) = (B+1) \sum_{i=1}^B \frac{ i }{i(B+1)} = 1.$$ Therefore, $e$ is a linear $e$-value.
 \\ \\ \noindent
-\textbf{Example 2: $p$-values as a special case.} We recover the standard randomization test $p$-value as a special case of the proposed framework (up to a translation).
-\\ \\ \noindent
-\textbf{Example 3: Powerful linear $e$-values via $p$-to-$e$ calibrators.}  We outline a general and flexible strategy for producing powerful linear $e$-values. Vovk and Wang introduced the notion of a \textit{$p$-to-$e$ calibrator}, which is a function that transforms a $p$-value into an $e$-value (\cite{Vovk2021b}). A $p$-to-$e$ calibrator $f$ satisfies the following properties: (i) $f$ is defined on $[0,1]$; (ii) $f$ is nonnegative; (iii) $f$ is decreasing; and (iv) $f$ integrates to (at most) $1$. Vovk and Wang furthermore defined the notion of an ``admissible'' $p$-to-$e$ calibrator, which roughly speaking is a calibrator that is ``good'' (or at least ``not bad''), i.e.\ it yields powerful $e$-values.  An admissible calibrator $f$ satisfies the following additional properties: (i) $f$ is left-continuous; (ii) $f(0) = \infty$; and (iii) $f$ integrates to \textit{exactly} 1. To illustrate the above definitions, let $f$ be an admissible $p$-to-$e$ calibrator, and let $P \sim U(0,1)$ be a uniformly distributed random variable with cumulative density function $G(p) = p$. We have by LOTUS that $\E[f(P)] = \int_{0}^1 f(p) d G(p) = \int_0^1 f = 1.$ 
+\textbf{Example 2: $p^\textrm{shift}$-values.} We recover standard $p$-values (up to a translation) as a special case of the proposed framework. Set $c = 3/2$ and $a_i = -1/B$ in definition (\ref{lin_e_def}). Then we obtain
+$$e = (3/2) - \frac{1}{B} \sum_{i=1}^B I_i$$
+as our test statistic. This statistic clearly is nonnegative. (In fact, it is greater than or equal to $1/2$.) Moreover, we can calculate its expectation as follows:
+$$
+\E[e] = \frac{3}{2} - \frac{1}{B} \sum_{i=1}^B \frac{i}{B+1} = \frac{3}{2}  - \frac{1}{B(B+1)} \sum_{i=1}^B i =  \frac{3}{2} - \frac{1}{B(B+1)} \left(\frac{B^2 + B}{2} \right) = \frac{3}{2} - \frac{1}{2} = 1.
+$$
+Therefore, $e$ is a valid linear $e$-value. We recognize $p_B = \frac{1}{B} \sum_{i=1}^B I_i$ as the standard, right-tailed randomization test $p$-value, which follows an approximate uniform distribution under the null hypothesis. Hence, $e = (3/2) - p_B$ follows an approximate $U(1/2,3/2)$ distribution. We can leverage this additional distributional information on $e$ to improve power in hypothesis testing (as we will see later). 
 
-Vovk, Wang, and Ramdas introduced several examples of $p$-to-$e$ calibrators. First, for given $\kappa \in (0,1),$ define the function $f_\kappa : [0,1] \to \R^{\geq 0}$ by $f_\kappa(p) = \kappa p^{\kappa-1}$. It is easy to check that $f_\kappa$ satisfies the properties listed above and is therefore an admissible $p$-to-$e$ calibrator. Next, define $g: [0,1] \to \R^{\geq 0}$ by
+This example motivates our definition of a ``$p^\textrm{shift}$-value.'' A $p^\textrm{shift}$-value is a linear $e$-value that is a $p$-value under a translation and/or scaling. Formally, let $e$ be a linear $e$-value. We say that $e$ is a $p^\textrm{shift}$-value if there exist scalars $k_0, k_1 \in \R$ such that
+$$\P( k_0 + k_1 e \leq \alpha ) \leq \alpha.$$ $p^\textrm{shift}$-values have the same statistical properties as $p$-values; therefore, $p^\textrm{shift}$-values can be used to control the type-I error rate or FWER.
+
+\subsection*{Powerful linear $e$-values via analytic $p$-to-$e$ calibrators.}
+We outline a general and flexible strategy for producing powerful linear $e$-values. Vovk and Wang introduced the notion of a \textit{$p$-to-$e$ calibrator}, which is a function that transforms a $p$-value into an $e$-value (\cite{Vovk2021b}). A $p$-to-$e$ calibrator $f$ must satisfy the following properties: (i) $f$ is defined on $[0,1]$; (ii) $f$ is nonnegative; (iii) $f$ is decreasing; and (iv) $f$ integrates to (at most) $1$. Vovk and Wang furthermore defined the notion of an ``admissible'' $p$-to-$e$ calibrator, which roughly speaking is a calibrator that is ``good'' (or at least ``not bad''), i.e.\ it yields powerful $e$-values.  An admissible calibrator $f$ satisfies the following additional properties: (i) $f$ is left-continuous; (ii) $f(0) = \infty$; and (iii) $f$ integrates to \textit{exactly} 1. To illustrate the above definitions, let $f$ be an admissible $p$-to-$e$ calibrator, and let $P \sim U(0,1)$ be a uniformly distributed random variable with cumulative density function $G(p) = p$. We have by LOTUS that $\E[f(P)] = \int_{0}^1 f(p) d G(p) = \int_0^1 f = 1.$ 
+
+Vovk, Wang, and Ramdas introduced several examples of $p$-to-$e$ calibrators, which we report here. First, for given $\kappa \in (0,1),$ define the function $f_\kappa : [0,1] \to \R^{\geq 0}$ by $f_\kappa(p) = \kappa p^{\kappa-1}$. It is easy to check that $f_\kappa$ satisfies the properties listed above and is therefore an admissible $p$-to-$e$ calibrator. Next, define $g: [0,1] \to \R^{\geq 0}$ by
 $$ g(p) = \frac{1 - p + p \ln(p)}{ p \log^2(p)}.$$ The function $g$ also is an admissible $p$-to-$e$ calibrator, although this is a bit harder to check.
 
-We propose a general procedure for constructing linear $e$-values using $p$-to-$e$ calibrators. The $j$th derivative of the $p$-to-$e$ calibrator $f_\kappa$ is $$f_\kappa^{(j)}(p) = \prod_{i=0}^j (i - j)p^{\kappa - j - 1}.$$
+We propose a general procedure for constructing linear $e$-values using $p$-to-$e$ calibrators. Let $f:[0,1] \to \R$ be an analytic $p$-to-$e$ calibrator. Let $f^{(j)}$ denote the $j$th derivative of $f$. Furthermore, let $x_0 \in (0,1)$, and let $r \in \N$. The $r$th degree Taylor expansion of $f$ at $x_0$ is
+$$f(x) = \sum_{j=0}^r \frac{f^{(j)}(x_0)}{j!}(x-x_0)^j + O(x^{r+1}).$$ Next, let $p_B = (1/B) \sum_{i=1}^B  I_i$ be the right-tailed randomization test $p$-value. Evaluating $f$ at $p_B$ yields
+$$f(p_B) = \sum_{j=0}^r \frac{ f^{(j)}(x_0) }{j!} (p_B - x_0)^j + O(p_B^{r+1}).$$ For $j \in \{0, \dots, r\},$ set $c_j = f^{(j)}(x_0)/(j!).$ Applying Proposition 2, can write the above as a linear combination of the $I_i$s:
+\begin{multline*}
+f(p_B) = \sum_{j=0}^r \frac{f^{(j)}(x_0)}{j!} x_0^j + \sum_{i=1}^B \left[\sum_{j=1}^r \sum_{k=1}^j  \frac{f^{(j)}(x_0) x_0^{j-k} \binom{j}{k} M(B,k,i) }{j!} \right] I_i + O(p_B^{r+1})  \\ := \sum_{j=0}^r \frac{f^{(j)}(x_0)}{j!} x_0^j  + \sum_{i=1}^B W(f, x_0, B, i, r) I_i + O(p^{r + 1}_B).
+\end{multline*}
+Omitting the remainder term, we take
+\begin{equation}\label{taylor_e_val}
+e = \sum_{j=0}^r \frac{f^{(j)}(x_0)}{j!} x^j_0 + \sum_{i=1}^B  W(f,x_0,r,B,i) I_i
+\end{equation}
+ as our linear $e$-value. In words, the test statistic $e$ is a linear $e$-value that approximates (to arbitrary precision) the $p$-to-$e$ calibrator $f$ evaluated at the empirical $p$-value $p_B$. The expectation of $e$ is approximately $1$ under the null hypothesis, assuming that the degree $r$ of the Taylor polynomial is large and the $p$-value $p_B$ is approximately uniformly distributed. However, we can normalize $e$ to ensure that it has unit expectation. The mean $\mu$ of $e$ is
+$$ \mu = \sum_{j=0}^r \frac{ f^{(j)}(x_0) }{j!}x_0^j  + \frac{1}{B+1} \sum_{i=1}^B W(f,x_0,B,i,r) i.$$ Therefore, the normalized linear $e$-value $e_\textrm{norm}$ defined by $e_\textrm{norm} = e/\mu$ has expectation $1$. 
 
-\subsection*{Advantages to the proposed framework, connections to existing approaches}
+We note that we can calculate $e$ in software in a highly efficient way. To calculate $e$, we must calculate $W(f,x_0,r,B,i)$ for all $i \in \{1, \dots, B\}$; recall that $f$ is the $p$-to-$e$ calibrator, $x_0$ is the point about which we perform the Taylor expansion, $B$ is the number of permuted (or resampled, etc.) test statistics, $r$ is the degree of the Taylor polynomial, and $i$ is the index of the resampled test statistic. For a given choice of $(f, x_0, r, B)$, we can compute the coefficients $\{ W(f, x_0, r, B, i) \}_{i=1}^B$ once and save them; then, we can load $\{ W(f, x_0, r, B, i) \}_{i=1}^B$ and evaluate (\ref{taylor_e_val}) each time we need to compute an $e$-value. Additionally, we can save the coefficients generated by certain, popular choices for $(f, x_0, r, B, i)$ (e.g., $f(x) = (1/2)x^{-1/2}$, $x_0 = 1/2$, $r = 20,$ and $B  \in \{500, 1000, 5000\}$) in the software package itself. Overall, calculating (\ref{taylor_e_val}) should be about the same speed as calculating a standard $p$-value.
 
-\section*{Direction 2: A class of fast and powerful test statistics for the conditional randomization (permutation) test}
-% Lin reg
-% ridge reg
-% kernel ridge reg (possibly)
+\subsection*{Advantages to the proposed framework and connections to the standard approach}
 
-\section{Other considerations}
-% - an $e$-value version of Selective SeqStep+.
-% - Testing and training on same data?
-% - Double-robustness? In particular, we are moving away from the known X|Z assumption here. 
-\section{Questions}
-- Can we generalize theorem 1 to exchangeable random variables? It is a bit subtle: $Y_i$ and $X_i$ are exchangeable, but $Y_i$ and $T_i$ are \textit{not}.
+We highlight three advantages of the proposed framework.
+\noindent \\ \\
+1. \textbf{Robustness.} To achieve FDR control in the standard randomization test framework, we must ensure that the $p$-values are uniformly distributed (or more precisely, that the $p$-values stochastically dominate the uniform distribution) under the null hypothesis. This task can be quite challenging in practice: QQ-plots often reveal that $p$-values in the tail of the distribution are inflated. In settings in which we test many (e.g., tens of thousands or hundreds of thousands of) hypotheses, this $p$-value inflation can lead to a severe loss of FDR control.
+
+The proposed framework provides a simple procedure to protect against this common source of type-I error inflation. Consider a linear $e$ value
+$$e = c + \sum_{i=1}^B a_i I_i.$$ Let $K(t) = (1/\sqrt{2\pi}) \exp( -(1/2)t^2)$ be the Gaussian kernel. Moreover, let $h > 0$ be a tunable kernel bandwidth. For $i \in \{1, \dots, B\}$, define the weight $w_i > 0$ by $$w_i = K(|i - B/2|/h).$$ In other words, the weights are defined by a Gaussian kernel over the ranks of the $T_i$s. Observe that (i) $w_i$ is a fixed (i.e., non-random) number, and (ii) as $i$ tends toward $1$ or $B$ (i.e., away from the midpoint of $B/2$), $w_i$ decreases. Next, define the weighted test statistic $e_\textrm{weight}$ by 
+$$e_\textrm{weight} = c + \sum_{i=1}^B w_i a_i I_i.$$ The mean $\mu$ of $e_\textrm{weight}$ is $\mu = c + \sum_{i=1}^B (w_i)(a_i)(i)/(B+1).$ Finally, define the normalized test statistic $e_\textrm{norm}$ by
+$$e_\textrm{norm} = e_\textrm{weight}/\mu.$$ $e_\textrm{norm}$ is a valid linear $e$-value. Moreover, $e_\textrm{norm}$ downweights the importance of resampled statistics in the tail of the sampling distribution, thereby protecting against miscalibration due to misspecified tails. To the best of our knowledge, there is no clear analog of this procedure for $p$-values.
+\noindent \\ \\
+2. \textbf{Multiple hypothesis testing under arbitrary dependence.} Wang and Ramdas recently designed an analog of the BH procedure for $e$-values (\cite{Wang2020b}). The method, called ``e-BH,'' takes as input a set of $e$-values and outputs a discovery set with guaranteed FDR control. Remarkably, the procedure controls FDR for any dependence structure between the $e$-values. The user optionally can supply information about the marginal or joint distribution of the $e$-values (e.g., that the PRDS property obtains) to boost power. Simulation studies and theoretical analyses indicate that e-BH is highly-powered. Linear $e$-values as proposed can be passed directly into the e-BH procedure.
+\noindent \\ \\
+3. \textbf{De-randomizing sample splitting methods.} Certain randomization tests, such as the holdout randomization test (HRT) of Tansey et al., require sample splitting. Sample splitting poses a challenge: if one splits the sample only once, the resulting $p$-value is non-reproducible. On the other hand, if one splits the sample multiple times, thereby producing multiple $p$-values, one cannot easily combine these $p$-values into a single $p$-value. $e$-values help to resolve this difficulty (\cite{Vovk2020}). Let $e_1, \dots, e_m$ be the $e$-values produced by $m$ sample splits. Then $\bar{e} = (1/m)\sum_{i=1}^m e_i$ is itself an $e$-value. As $m$ tends to infinity, $\bar{e}$ converges (under some conditions) to a constant, de-randomizing the sample splitting procedure.
+\noindent \\ \\
+Importantly, the above benefits can be mixed-and-matched at our discretion. Figure \ref{fig:test_stats} summarizes the relationships between the test statistics considered in this proposal.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\linewidth]{test_stat_fig_crop}
+	\caption{Connection between the various test statistics considered in this proposal: $p^\textrm{shift}$-values $\subset$ linear $e$-values $\subset$ $e$-values. Meanwhile, $p^\textrm{shift}$-values are scaled and/or translated $p$-values with unit expectation.}
+	\label{fig:test_stats}
+\end{figure}
+
+
+\section*{Direction 2: A class of fast and powerful test statistics for randomization tests}
+Coming soon...
+
+\section*{Tertiary directions}
+We note several possible other directions that could be of interest.
+\\ \\ \noindent
+1. \textbf{An analog of Selective SeqStep for $e$-values.}  Selective SeqStep is a multiple testing correction procedure for controlling FDR proposed by Barber and Candes (\cite{Barber2015}). Li and Candes recommend using Selective SeqStep instead of BH to correct $p$-values outputted by the CRT, as Selective SeqStep better handles discrete $p$-values (\cite{Li2021}). Wang and Ramdas developed an analog of BH for $e$-values; might it be possible to develop an analog of Selective SeqStep for $e$-values? Such an extension would enable users of the proposed framework to choose between different multiple testing correction procedures, which would be helpful.
+\\ \\ \noindent
+2. \textbf{Testing and training on the same data.} Our goal in applying the CRT is to test for conditional independence of $X$ and $Y$ given $Z$. Under what conditions can we train the regression function $\hat{E}(X|Z)$ and test the conditional independence hypothesis using the same data? Intuitively, the variance of the regression function $\hat{E}(X|Z)$ must be small. Can we derive a practical (e.g., bootstrap-based) methodology to help users determine whether or not to sample split?
+\\ \\ \noindent
+3. \textbf{Double robustness and double regression.} Under the right choice of the test statistic, the CRT is doubly-robust in an asymptotic (i.e., large $n$, fixed $p$) regime. Can we derive more precise, non-asymptotic or high-dimensional statements about double robustness a la double machine learning (DML; \cite{Chernozhukov2018}) or the generalized covariance measure (GCM; \cite{Shah2020})? More generally, CRT, GCM, and DML at their core are methods for causal inference based on flexible double regression. What are the connections and relative strengths and weaknesses of these approaches?
+\\ \\ \noindent
+ % \textbf{NOTE}: I (Tim) know that Nav and Gene already are working on the double robustness problem. I do not want to duplicate effort!
 
 \printbibliography
 \begin{appendices}
-\subsection*{Proposition 1 proof}
-
-
 \subsection*{Proposition 2 proof}
 Define the set $C(r,B)$ by
 $$C(r,B) := \left\{ (k_1, \dots, k_B) \in \{0, \dots, r\}^B : \sum_{i=1}^B k_i = r \right\},$$ i.e., $C(r,B)$ is the set of length-$B$ tuples of integers from $0$ to $r$ such that the elements of the tuple sum to $r$. Next, let the function $\tau: C(r,B) \to \{ 1, \dots, B \}$ be defined by
@@ -139,16 +184,13 @@ $$ \left( \sum_{i=1}^B I_i \right)^r = \sum_{i=1}^B \left[ (B - i + 1)^r - (B - 
 Next, setting $p_B = \frac{1}{B} \sum_{i=1}^B I_i$, we obtain
 $$p^r_B = \left( \frac{1}{B}\sum_{i=1}^B I_i \right)^r = \sum_{i=1}^B \left[ (1 - i/B + 1/B)^r - (1 - i/B)^r \right] I_i = \sum_{i=1}^B M(B,r,i) I_i.$$ We next consider the $r$th degree polynomial of $p^r_B$. First, for $j \in \N$, and $x_0 \in \R$, we have that
 \begin{multline*}
-\left( p_B - x_0 \right)^r = \sum_{k=0}^j \binom{j}{k} p_B^k x_0^{j-k} = x^j_0 + \sum_{k=1}^j \binom{j}{k}p_B^k x_0^{j - k} \\ = x^j_0 + \sum_{k=1}^j \binom{j}{k} \left[ \sum_{i=1}^B M(B,k,i) I_i \right] x^{j-k}_0  = x^j_0 + \sum_{i=1}^B  \left[ \sum_{k=1}^j x_0^{j-k} \binom{j}{k} M(B,k,i) \right] I_i.
+\left(p_B - x_0 \right)^j = \sum_{k=0}^j \binom{j}{k} p_B^k x_0^{j-k}(-1)^{j-k} = x^j_0(-1)^j + \sum_{k=1}^j \binom{j}{k}p_B^k x_0^{j - k}(-1)^{j-k} \\ = x^j_0(-1)^j + \sum_{k=1}^j \binom{j}{k} \left[\sum_{i=1}^B M(B,k,i) I_i \right] x^{j-k}_0(-1)^{j-k} \\ = x^j_0(-1)^j + \sum_{i=1}^B  \left[ \sum_{k=1}^j x_0^{j-k} \binom{j}{k} (-1)^{j-k} M(B,k,i) \right] I_i.
 \end{multline*}
 Finally, let $c_0, c_1, \dots, c_r \in \R$ be polynomial coefficients. We have that
 \begin{multline*}
-\sum_{j=0}^r c_j \left(p_B - x_0 \right)^j  = c_0 + \sum_{j=1}^r c_j (p_B - x_0)^j = c_0 + \sum_{l=1}^r c_j \left[x_0^j + \sum_{i=1}^B \left[\sum_{k=1}^j x_0^{j-k} \binom{j}{k} M(B,k,i) \right] I_i \right] \\ = \left(c_0 + \sum_{j=1}^r c_j x_0^j \right) + \sum_{i=1}^B \left[\sum_{j=1}^r \sum_{k=1}^j c_j x_0^{j-k} \binom{j}{k} M(B,k,i) \right] I_i,
+\sum_{j=0}^r c_j \left(p_B - x_0 \right)^j  = c_0 + \sum_{j=1}^r c_j (p_B - x_0)^j \\ = c_0 + \sum_{j=1}^r c_j \left[x_0^j(-1)^j + \sum_{i=1}^B \left[\sum_{k=1}^j x_0^{j-k} \binom{j}{k}(-1)^{j-k} M(B,k,i) \right] I_i \right] \\ = \sum_{j=0}^r c_j x_0^j(-1)^j + \sum_{i=1}^B \left[\sum_{j=1}^r \sum_{k=1}^j c_j x_0^{j-k} \binom{j}{k} (-1)^{j-k} M(B,k,i) \right] I_i,
 \end{multline*}
 completing the proof.
-
-
-
 
 \end{appendices}
 \end{document}

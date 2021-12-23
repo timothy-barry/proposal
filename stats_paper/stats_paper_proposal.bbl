@@ -19,44 +19,125 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
-    \entry{Dobriban2021}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=facc1c652916b234e238c4cd8bb5ff9d}{%
-           family={Dobriban},
-           familyi={D\bibinitperiod},
-           given={Edgar},
-           giveni={E\bibinitperiod},
+    \entry{Barber2015}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=826fc96de04a5307c256bfb0b6202e0f}{%
+           family={Barber},
+           familyi={B\bibinitperiod},
+           given={Rina\bibnamedelima Foygel},
+           giveni={R\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a9a5219f71b7e2464ef1ebc541e54f1f}{%
+           family={Cand{é}s},
+           familyi={C\bibinitperiod},
+           given={Emmanuel\bibnamedelima J.},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{facc1c652916b234e238c4cd8bb5ff9d}
-      \strng{fullhash}{facc1c652916b234e238c4cd8bb5ff9d}
-      \strng{bibnamehash}{facc1c652916b234e238c4cd8bb5ff9d}
-      \strng{authorbibnamehash}{facc1c652916b234e238c4cd8bb5ff9d}
-      \strng{authornamehash}{facc1c652916b234e238c4cd8bb5ff9d}
-      \strng{authorfullhash}{facc1c652916b234e238c4cd8bb5ff9d}
-      \field{sortinit}{D}
-      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \strng{namehash}{ab29a92420006b6d62ee2935caeb1eb4}
+      \strng{fullhash}{ab29a92420006b6d62ee2935caeb1eb4}
+      \strng{bibnamehash}{ab29a92420006b6d62ee2935caeb1eb4}
+      \strng{authorbibnamehash}{ab29a92420006b6d62ee2935caeb1eb4}
+      \strng{authornamehash}{ab29a92420006b6d62ee2935caeb1eb4}
+      \strng{authorfullhash}{ab29a92420006b6d62ee2935caeb1eb4}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Invariance-based randomization tests -- such as permutation tests -- are an important and widely used class of statistical methods. They allow drawing inferences with few assumptions on the data distribution. Most work focuses on their type I error control properties, while their consistency properties are much less understood. We develop a general framework and a set of results on the consistency of invariance-based randomization tests in signal-plus-noise models. Our framework is grounded in the deep mathematical area of representation theory. We allow the transforms to be general compact topological groups, such as rotation groups. Moreover, we allow actions by general linear group representations. We apply our framework to a number of fundamental and highly important problems in statistics, including sparse vector detection, testing for low-rank matrices in noise, sparse detection in linear regression, symmetric submatrix detection, and two-sample testing. Perhaps surprisingly, we find that randomization tests can adapt to problem structure and detect signals at the same rate as tests with full knowledge of the noise distribution.}
+      \field{abstract}{In many fields of science, we observe a response variable together with a large number of potential explanatory variables, and would like to be able to discover which variables are truly associated with the response. At the same time, we need to know that the false discovery rate (FDR)the expected fraction of false discoveries among all discoveriesis not too high, in order to assure the scientist that most of the discoveries are indeed true and replicable. This paper introduces the knockoff filter, a new variable selection procedure controlling the FDR in the statistical linear model whenever there are at least as many observations as variables. This method achieves exact FDR control in finite sample settings no matter the design or covariates, the number of variables in the model, or the amplitudes of the unknown regression coefficients, and does not require any knowledge of the noise level. As the name suggests, the method operates by manufacturing knockoff variables that are cheaptheir construction does not require any new dataand are designed to mimic the correlation structure found within the existing variables, in a way that allows for accurate FDR control, beyond what is possible with permutation-based methods. The method of knockoffs is very general and flexible, and can work with a broad class of test statistics. We test the method in combination with statistics from the Lasso for sparse regression, and obtain empirical results showing that the resulting method has far more power than existing selection rules when the proportion of null variables is high.}
       \field{eprinttype}{arXiv}
-      \field{title}{{Consistency of invariance-based randomization tests}}
-      \field{year}{2021}
-      \field{pages}{1\bibrangedash 35}
-      \range{pages}{35}
+      \field{issn}{21688966}
+      \field{journaltitle}{Annals of Statistics}
+      \field{number}{5}
+      \field{title}{{Controlling the false discovery rate via knockoffs}}
+      \field{volume}{43}
+      \field{year}{2015}
+      \field{pages}{2055\bibrangedash 2085}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1214/15-AOS1337
+      \endverb
       \verb{eprint}
-      \verb 2104.12260
+      \verb 1404.5609
       \endverb
       \verb{file}
-      \verb :Users/timbarry/research{\_}papers/dobriban2021.pdf:pdf
+      \verb :Users/timbarry/research{\_}papers/barber2015.pdf:pdf
       \endverb
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/2104.12260
+      \keyw{False discovery rate (FDR),Lasso,Martingale theory,Permutation methods,Sequential hypothesis testing,Variable selection}
+    \endentry
+    \entry{Chernozhukov2018}{article}{}
+      \name{author}{7}{}{%
+        {{uniquename=0,uniquepart=base,hash=c75cbe2cefd1e532f636a50892605d06}{%
+           family={Chernozhukov},
+           familyi={C\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=ef4b66d2ca2dde47ec1b0afa98306775}{%
+           family={Chetverikov},
+           familyi={C\bibinitperiod},
+           given={Denis},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=d3c2cc443c71254678269de10d61d61c}{%
+           family={Demirer},
+           familyi={D\bibinitperiod},
+           given={Mert},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7e6b0ea4eee38822cdb0a4361e98752c}{%
+           family={Duflo},
+           familyi={D\bibinitperiod},
+           given={Esther},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=b38b53cdfa3ce5b62046f22663d5cc6f}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=9c98526d9f1775b95096664c9cf0c633}{%
+           family={Newey},
+           familyi={N\bibinitperiod},
+           given={Whitney},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=bf615cc72310078c444f0c653a1fc5e7}{%
+           family={Robins},
+           familyi={R\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e8ad45c8076487daa445bfbeb4e02a04}
+      \strng{fullhash}{7892f5fdea2b46a0fb4e6c031c27c781}
+      \strng{bibnamehash}{e8ad45c8076487daa445bfbeb4e02a04}
+      \strng{authorbibnamehash}{e8ad45c8076487daa445bfbeb4e02a04}
+      \strng{authornamehash}{e8ad45c8076487daa445bfbeb4e02a04}
+      \strng{authorfullhash}{7892f5fdea2b46a0fb4e6c031c27c781}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We revisit the classic semi-parametric problem of inference on a low-dimensional parameter $\theta$0 in the presence of high-dimensional nuisance parameters $\eta$0. We depart from the classical setting by allowing for $\eta$0 to be so high-dimensional that the traditional assumptions (e.g. Donsker properties) that limit complexity of the parameter space for this object break down. To estimate $\eta$0, we consider the use of statistical or machine learning (ML) methods, which are particularly well suited to estimation in modern, very high-dimensional cases. ML methods perform well by employing regularization to reduce variance and trading off regularization bias with overfitting in practice. However, both regularization bias and overfitting in estimating $\eta$0 cause a heavy bias in estimators of $\theta$0 that are obtained by naively plugging ML estimators of $\eta$0 into estimating equations for $\theta$0. This bias results in the naive estimator failing to be N-1/2 consistent, where N is the sample size. We show that the impact of regularization bias and overfitting on estimation of the parameter of interest $\theta$0 can be removed by using two simple, yet critical, ingredients: (1) using Neyman-orthogonal moments/scores that have reduced sensitivity with respect to nuisance parameters to estimate $\theta$0; (2) making use of cross-fitting, which provides an efficient form of data-splitting. We call the resulting set of methods double or debiased ML (DML). We verify that DML delivers point estimators that concentrate in an N-1 -neighbourhood of the true parameter values and are approximately unbiased and normally distributed, which allows construction of valid confidence statements. The generic statistical theory of DML is elementary and simultaneously relies on only weak theoretical requirements, which will admit the use of a broad array of modern ML methods for estimating the nuisance parameters, such as random forests, lasso, ridge, deep neural nets, boosted trees, and various hybrids and ensembles of these methods. We illustrate the general theory by applying it to provide theoretical properties of the following: DML applied to learn the main regression parameter in a partially linear regression model; DML applied to learn the coefficient on an endogenous variable in a partially linear instrumental variables model; DML applied to learn the average treatment effect and the average treatment effect on the treated under unconfoundedness; DML applied to learn the local average treatment effect in an instrumental variables setting. In addition to these theoretical applications, we also illustrate the use of DML in three empirical examples.}
+      \field{issn}{1368423X}
+      \field{journaltitle}{Econometrics Journal}
+      \field{number}{1}
+      \field{title}{{Double/debiased machine learning for treatment and structural parameters}}
+      \field{volume}{21}
+      \field{year}{2018}
+      \field{pages}{C1\bibrangedash C68}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1111/ectj.12097
       \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/2104.12260
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/dml.pdf:pdf
       \endverb
     \endentry
     \entry{Johnson2010}{article}{}
@@ -172,6 +253,156 @@
       \verb{url}
       \verb http://arxiv.org/abs/2005.06095
       \endverb
+    \endentry
+    \entry{Li2021}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=39c12931ce1d8a7259be450b9b698526}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Shuangning},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=47e52e423450f79070607f61a9f53828}{%
+           family={Cand{è}s},
+           familyi={C\bibinitperiod},
+           given={Emmanuel\bibnamedelima J.},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7d372cb07f9db27e5e042fea0fcf1c68}
+      \strng{fullhash}{7d372cb07f9db27e5e042fea0fcf1c68}
+      \strng{bibnamehash}{7d372cb07f9db27e5e042fea0fcf1c68}
+      \strng{authorbibnamehash}{7d372cb07f9db27e5e042fea0fcf1c68}
+      \strng{authornamehash}{7d372cb07f9db27e5e042fea0fcf1c68}
+      \strng{authorfullhash}{7d372cb07f9db27e5e042fea0fcf1c68}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper introduces the sequential CRT, which is a variable selection procedure that combines the conditional randomization test (CRT) and Selective SeqStep+. Valid p-values are constructed via the flexible CRT, which are then ordered and passed through the selective SeqStep+ filter to produce a list of discoveries. We develop theory guaranteeing control on the false discovery rate (FDR) even though the p-values are not independent. We show in simulations that our novel procedure indeed controls the FDR and are competitive with -- and sometimes outperform -- state-of-the-art alternatives in terms of power. Finally, we apply our methodology to a breast cancer dataset with the goal of identifying biomarkers associated with cancer stage.}
+      \field{eprinttype}{arXiv}
+      \field{title}{{Deploying the Conditional Randomization Test in High Multiplicity Problems}}
+      \field{year}{2021}
+      \field{pages}{1\bibrangedash 43}
+      \range{pages}{43}
+      \verb{eprint}
+      \verb 2110.02422
+      \endverb
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/Li2021.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2110.02422
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2110.02422
+      \endverb
+    \endentry
+    \entry{Maleki2020}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,uniquepart=base,hash=590026dd4c91c59cd24c35aeb601eda7}{%
+           family={Maleki},
+           familyi={M\bibinitperiod},
+           given={Farhad},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=ade5924165f48cc54aef374cdb48d6ea}{%
+           family={Ovens},
+           familyi={O\bibinitperiod},
+           given={Katie},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=eaec047beaf43b7eff83347a00f733ab}{%
+           family={Hogan},
+           familyi={H\bibinitperiod},
+           given={Daniel\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=c48298a6383576eb43b358a228074dfb}{%
+           family={Kusalik},
+           familyi={K\bibinitperiod},
+           given={Anthony\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b18837cca62c7a809b53e58604f4dd86}
+      \strng{fullhash}{365e766ffc6191523dba46992fe63097}
+      \strng{bibnamehash}{365e766ffc6191523dba46992fe63097}
+      \strng{authorbibnamehash}{365e766ffc6191523dba46992fe63097}
+      \strng{authornamehash}{b18837cca62c7a809b53e58604f4dd86}
+      \strng{authorfullhash}{365e766ffc6191523dba46992fe63097}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Gene set analysis methods are widely used to provide insight into high-throughput gene expression data. There are many gene set analysis methods available. These methods rely on various assumptions and have different requirements, strengths and weaknesses. In this paper, we classify gene set analysis methods based on their components, describe the underlying requirements and assumptions for each class, and provide directions for future research in developing and evaluating gene set analysis methods.}
+      \field{issn}{16648021}
+      \field{journaltitle}{Frontiers in Genetics}
+      \field{number}{June}
+      \field{title}{{Gene Set Analysis: Challenges, Opportunities, and Future Research}}
+      \field{volume}{11}
+      \field{year}{2020}
+      \field{pages}{1\bibrangedash 16}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.3389/fgene.2020.00654
+      \endverb
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/gene{\_}set{\_}analysis{\_}2020.pdf:pdf
+      \endverb
+      \keyw{gene expression,gene set analysis,gene set database,gene set enrichment,sensitivity,specificity}
+    \endentry
+    \entry{Shah2020}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=6b2da2d11d2ab28853c86f9da5ac8803}{%
+           family={Shah},
+           familyi={S\bibinitperiod},
+           given={Rajen\bibnamedelima D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=b50a0fee091540dedaefacc234101037}{%
+           family={Peters},
+           familyi={P\bibinitperiod},
+           given={Jonas},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8e464cad6c499e26476be2f48afd0f91}
+      \strng{fullhash}{8e464cad6c499e26476be2f48afd0f91}
+      \strng{bibnamehash}{8e464cad6c499e26476be2f48afd0f91}
+      \strng{authorbibnamehash}{8e464cad6c499e26476be2f48afd0f91}
+      \strng{authornamehash}{8e464cad6c499e26476be2f48afd0f91}
+      \strng{authorfullhash}{8e464cad6c499e26476be2f48afd0f91}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{It is a common saying that testing for conditional independence, that is, testing whether whether two random vectors X and Y are independent, given Z, is a hard statistical problem if Z is a continuous random variable (or vector). In this paper, we prove that conditional independence is indeed a particularly difficult hypothesis to test for. Valid statistical tests are required to have a size that is smaller than a pre-defined significance level, and different tests usually have power against a different class of alternatives. We prove that a valid test for conditional independence does not have power against any alternative. Given the nonexistence of a uniformly valid conditional independence test, we argue that tests must be designed so their suitability for a particular problem may be judged easily. To address this need, we propose in the case where X and Y are univariate to nonlinearly regress X on Z, and Y on Z and then compute a test statistic based on the sample covariance between the residuals, which we call the generalised covariance measure (GCM). We prove that validity of this form of test relies almost entirely on the weak requirement that the regression procedures are able to estimate the conditional means X given Z, and Y given Z, at a slow rate. We extend the methodology to handle settings where X and Y may be multivariate or even high dimensional. While our general procedure can be tailored to the setting at hand by combining it with any regression technique, we develop the theoretical guarantees for kernel ridge regression. A simulation study shows that the test based on GCM is competitive with state of the art conditional independence tests. Code is available as the R package GeneralisedCovarianceMeasure on CRAN.}
+      \field{eprinttype}{arXiv}
+      \field{issn}{21688966}
+      \field{journaltitle}{Annals of Statistics}
+      \field{number}{3}
+      \field{title}{{The hardness of conditional independence testing and the generalised covariance measure}}
+      \field{volume}{48}
+      \field{year}{2020}
+      \field{pages}{1514\bibrangedash 1538}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1214/19-AOS1857
+      \endverb
+      \verb{eprint}
+      \verb 1804.07203
+      \endverb
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/shah2018.pdf:pdf
+      \endverb
+      \keyw{Conditional independence,Hypothesis testing,Kernel ridge regression,Testability,Wild bootstrap}
     \endentry
     \entry{Tansey2021a}{article}{}
       \name{author}{5}{}{%
