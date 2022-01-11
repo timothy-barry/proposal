@@ -1991,6 +1991,10 @@
     <bcf:citekey order="12">Li2021</bcf:citekey>
     <bcf:citekey order="13">Chernozhukov2018</bcf:citekey>
     <bcf:citekey order="14">Shah2020</bcf:citekey>
+    <bcf:citekey order="15">Berrett2020</bcf:citekey>
+    <bcf:citekey order="16">Kim2021</bcf:citekey>
+    <bcf:citekey order="17">Tansey2021a</bcf:citekey>
+    <bcf:citekey order="18">Kim2021</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

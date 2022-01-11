@@ -1,0 +1,30 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx} 
+\usepackage{float}
+\usepackage[caption = false]{subfig}
+\usepackage{/Users/timbarry/Documents/optionFiles/mymacros}
+
+\begin{document}
+\noindent Tim B.
+\\ \\ \noindent
+
+\section{Standard approach}
+This document explores a simple strategy for improving the robustness of randomization tests. Let $T_1, \dots, T_{B-1}$ be the $B-1$ resampled test statistics. Let $T^*$ be the statistic computed on the raw data. Let $\textrm{rank}(T^*; {B-1})$ be the rank of $T^*$ in the set $\{ T^*, T_1, \dots, T_{B}\},$
+i.e.
+$$ \textrm{rank}(T^*; B) = | \{ T \in \{ T^*, T_1, \dots, T_B  \} : T^* \geq T |  = 1 + \sum_{i=1}^{B-1} \mathbb{I}(T^* \geq T_i).$$
+Under the null hypothesis, $(T^*, T_1, \dots, T_B)$ is exchangeable, and we have that
+$$ \textrm{rank}(T^*; B) = \textrm{Unif}(\{1, \dots, B\}).$$
+We can construct a $p$-value as
+$$p = \textrm{rank}(T^*; B)/B.$$
+
+\section{A simple strategy for improving robustness}
+Denote $R := \textrm{rank}(T^*; B)$. Let $f: \{1, \dots, B\} \to \R$ be a function. We consider the transformed random variable $W := f(R)$. Let $\mathcal{X} := \{ f(r) \}_{r=1}^B .$ For $w \in \mathcal{X} $, we have that
+$$\P\left(W = w\right) = \P\left( R \in f^{-1}(w) \right) = | f^{-1}(w)|,$$
+where $f^{-1}(w) = \{ r \in \{1, \dots, B\} : f(r) = w \}$ is the preimage of $w$. The latter equality follows because $R$ is uniformly distributed on $\{1, \dots, B\}.$ If $f$ is injective, then $P(W = w) = 1/B$ for all $w$, implying that $W$ is uniformly distributed over $\mathcal{X}.$
+ 
+\bibliographystyle{unsrt}
+\bibliography{/Users/timbarry/Documents/optionFiles/library.bib}
+
+\end{document}

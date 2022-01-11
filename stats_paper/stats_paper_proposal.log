@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  23 DEC 2021 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  9 JAN 2022 17:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -570,74 +570,79 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--77
  []
 
 [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 110--113
+Underfull \hbox (badness 10000) in paragraph at lines 111--114
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 117--124
+Underfull \hbox (badness 10000) in paragraph at lines 118--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--124
+Underfull \hbox (badness 10000) in paragraph at lines 118--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--124
+Underfull \hbox (badness 10000) in paragraph at lines 118--125
 
  []
 
 <test_stat_fig_crop.pdf, id=30, 455.7025pt x 552.0625pt>
 File: test_stat_fig_crop.pdf Graphic file (type pdf)
 <use test_stat_fig_crop.pdf>
-Package pdftex.def Info: test_stat_fig_crop.pdf  used on input line 127.
+Package pdftex.def Info: test_stat_fig_crop.pdf  used on input line 128.
 (pdftex.def)             Requested size: 187.89914pt x 227.63593pt.
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 137--146
+Underfull \hbox (badness 10000) in paragraph at lines 138--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--146
+Underfull \hbox (badness 10000) in paragraph at lines 138--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--146
+Underfull \hbox (badness 10000) in paragraph at lines 138--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--146
+Underfull \hbox (badness 10000) in paragraph at lines 138--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--146
+Underfull \hbox (badness 10000) in paragraph at lines 138--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--152
 
  []
 
 [7 <./test_stat_fig_crop.pdf>]
-Overfull \hbox (0.20825pt too wide) in paragraph at lines 148--148
+Overfull \hbox (0.20825pt too wide) in paragraph at lines 156--156
 [][]\OT1/cmr/m/n/12 Kuchibhotla, Arun Ku-mar (2020). ``Ex-change-abil-ity, Con-
 for-mal Pre-dic-tion, and Rank Tests''.
  []
 
-[8] [9] [10] [11] (./stats_paper_proposal.aux)
+[8] [9] [10] [11] [12] (./stats_paper_proposal.aux)
 Package logreq Info: Writing requests to 'stats_paper_proposal.run.xml'.
 \openout1 = `stats_paper_proposal.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10344 strings out of 492649
- 179052 string characters out of 6129622
- 611447 words of memory out of 5000000
- 14111 multiletter control sequences out of 15000+600000
- 13678 words of font info for 52 fonts, out of 8000000 for 9000
+ 10368 strings out of 492649
+ 179583 string characters out of 6129622
+ 612606 words of memory out of 5000000
+ 14133 multiletter control sequences out of 15000+600000
+ 14323 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,47p,2813b,1162s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,47p,2813b,1371s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
@@ -653,10 +658,10 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on stats_paper_proposal.pdf (11 pages, 206331 bytes).
+Output written on stats_paper_proposal.pdf (12 pages, 212272 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
+ 123 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

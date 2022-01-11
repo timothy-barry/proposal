@@ -1,0 +1,5 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'idea2.blg'
+[30] biber-darwin:313> INFO - === Mon Jan 10, 2022, 23:41:03
+[152] Utils.pm:209> ERROR - Cannot find control file 'idea2.bcf'! - Did latex run successfully on your .tex file before you ran biber?
+[152] Biber.pm:114> INFO - ERRORS: 1

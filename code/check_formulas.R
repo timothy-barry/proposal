@@ -1,6 +1,6 @@
-x_grid <- seq(-2.5,2.5,0.25)
+x_grid <- seq(-2.5,2.5,0.1)
 y <- rnorm(1)
-is <- as.integer(x_grid > y)
+is <- as.integer(x_grid >= y)
 r <- 6
 B <- length(is)
 idx <- seq(1, B)
@@ -11,8 +11,9 @@ j <- 3
 js <- seq(0, r)
 x0 <- 0.5
 
-M <- function(B, k, i) (1 - i/B + 1/B)^k - (1 - i/B)^k
+f <- function(p) (1/2) * p^(-1/2)
 
+M <- function(B, k, i) (1 - i/B + 1/B)^k - (1 - i/B)^k
 # function to compute the power coefficients
 g <- function(x0, j, B, i) {
   ks <- seq(1, j)
@@ -54,3 +55,8 @@ power_intercept + sum(power_coefs * is)
 # prop 2, part 4 (polynomial)
 sum(cs * (p - x0)^js)
 e_intercept + sum(e_coefs * is)
+
+# Taylor series e-value
+f_prime <- function(j, x0) {
+  
+}
