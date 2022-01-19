@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 JAN 2022 10:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 JAN 2022 13:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**idea.tex
-(./idea.tex
+**idea2.tex
+(./idea2.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
@@ -149,8 +149,8 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \sf@top=\skip49
 \sf@bottom=\skip50
 )
-(/Users/timbarry/Documents/optionFiles/mymacros.sty) (./idea.aux)
-\openout1 = `idea.aux'.
+(/Users/timbarry/Documents/optionFiles/mymacros.sty) (./idea2.aux)
+\openout1 = `idea2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
@@ -237,103 +237,47 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 13.
+LaTeX Font Info:    Try loading font information for U+msa on input line 12.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 13.
+LaTeX Font Info:    Try loading font information for U+msb on input line 12.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 26--30
+Underfull \hbox (badness 10000) in paragraph at lines 23--27
 
  []
 
 [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 31--35
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 47--50
-
- []
-
-[3] [4]
-Overfull \hbox (22.63371pt too wide) detected at line 69
- []$[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 + [] 2(\OML/cm
-m/m/it/12 B \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 i\OT1/cmr/m/n/12 )\OML/cmm/m/
-it/12 I[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 + [] 2(\OML
-/cmm/m/it/12 B \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 i\OT1/cmr/m/n/12 )\OML/cmm
-/m/it/12 I[] \OT1/cmr/m/n/12 = [](2\OML/cmm/m/it/12 B \OMS/cmsy/m/n/12 ^^@ \OT1
-/cmr/m/n/12 2\OML/cmm/m/it/12 i \OT1/cmr/m/n/12 + 1)\OML/cmm/m/it/12 I[] \OT1/c
-mr/m/n/12 = [] \OML/cmm/m/it/12 a[]I[];  $ 
- []
-
-[5] [6] [7] [8]
-Overfull \hbox (12.8534pt too wide) detected at line 132
- []$[] \OT1/cmr/m/n/12 = [][] \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/
-12 y\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\
-OML/cmm/m/it/12 y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m
-/it/12 y\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 dy \OT1/cmr/m/n/12 = \OML/cmm/m/it/
-12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ [
-]\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y\OT1/cmr
-/m/n/12 )][][][] = 1 \OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/
-12 :  $ 
- []
-
-[9] [10]
-Overfull \hbox (15.63629pt too wide) detected at line 159
- []$[]  [] [] \OT1/cmr/m/n/12 = [] []$ 
- []
-
-[11]
-Overfull \hbox (66.05806pt too wide) detected at line 176
- []$[] \OT1/cmr/m/n/12 = [][] \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/
-12 y\OT1/cmr/m/n/12 ) [] \OML/cmm/m/it/12 dy \OT1/cmr/m/n/12 = [][] \OML/cmm/m/
-it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y\OT1/cmr/m/n/12 ) [] \OML/cmm/m/it/12
- dy \OT1/cmr/m/n/12 = 1 \OMS/cmsy/m/n/12 ^^@ [][] \OML/cmm/m/it/12 f\OT1/cmr/m/
-n/12 (\OML/cmm/m/it/12 y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\
-OML/cmm/m/it/12 y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 dy:$ []  
- []
-
-[12]
-
-LaTeX Warning: Citation `Sury2004' on page 13 undefined on input line 181.
-
-[13] (./idea.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+(./idea2.bbl) [2] (./idea2.aux) ) 
 Here is how much of TeX's memory you used:
- 2935 strings out of 492649
- 43406 string characters out of 6129622
- 114326 words of memory out of 5000000
- 6781 multiletter control sequences out of 15000+600000
- 10853 words of font info for 42 fonts, out of 8000000 for 9000
+ 2930 strings out of 492649
+ 43334 string characters out of 6129622
+ 111299 words of memory out of 5000000
+ 6772 multiletter control sequences out of 15000+600000
+ 9545 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,38p,920b,125s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
-sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
-ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loca
-l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
-exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texl
-ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
-e/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on idea.pdf (13 pages, 158572 bytes).
+ 41i,5n,38p,540b,113s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2018/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmti12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
+nts/symbols/msbm10.pfb>
+Output written on idea2.pdf (2 pages, 94864 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 51 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

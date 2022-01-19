@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx} 
+\usepackage{float}
+\usepackage[caption = false]{subfig}
+\usepackage{/Users/timbarry/Documents/optionFiles/mymacros}
+
+\begin{document}
+\noindent
+Tim B.
+\begin{center}
+\textbf{The overlooked need for negative controls in conditional independence testing}
+\end{center}
+
+\begin{itemize}
+\item Conditional independence tests (CI tests) assess the association between two variables (e.g., a genetic variant and a phenotype) while controlling for one or more confounding variables (e.g., population structure). CI tests are among the most widely-used and fundamental hypothesis tests in applied statistics and science.
+\item Recent results have indicated that assumption-free conditional independence testing is impossible: all valid CI tests must make an assumption or set of assumptions about the data-generating mechanism (except for in the trivial case where the confounding vector $Z$ is discrete and takes a small number of values).
+\item In practice, these assumptions are rarely checked, especially in so-called ``high-multiplicity'' settings in which there are tens of thousands (or more) of hypotheses.
+
+\item We argue that negative controls ---   --- are required in virtually applications of conditional independence tests.
+
+\item Conceptual thoughts.
+\begin{itemize}
+\item \textbf{Breaking the limits of black box-based inference with negative controls}. Black boxes can be leveraged for predictive inference (via conformal prediction) and independence testing (via permutation tests) without assumptions beyond i.i.d. However, CI testing is more difficult. We must inject additional information into the system --- in the form of negative controls --- to solve the problem with black boxes. We must supplement the black boxes with external, negative control information to conduct reliable conditional independence tests; the black boxes alone are unsatisfactory.
+
+\item \textbf{The blessings of multiplicity}. It is unclear how one would test the assumptions of model-free CI methods (e.g., local permutation test) when there are only a few hypotheses to test. However, when there are many hypotheses (including many negative control hypotheses), we check assumptions by fitting the model to negative controls and checking for calibration.
+\end{itemize}
+
+ % Absent negative controls --- experimental or \textit{in silico} --- we have little reason to trust our discovery set.
+
+
+% \item In some problems \textit{experimental} negative controls are available; 
+% especially especially in high-multiplicity settings (i.e., settings in which there are thousands of hypotheses), where checking the assumptions for each of . 
+% Applying CI tests without assumption checking is unsatisfactory, especially in high-multiplicity settings.
+% \item Negative controls enable us to check the . CI testing in the absence of negative control data is unsatisfactory, 
+%\item Calibrating a method against the negative control data is fraught with difficulties. Crucially, this approach assumes that the method is miscalibrated on the test data in exactly the same way as on the negative control data, a untestable and often unreasonable assumption.
+%\item We instead propose a simple procedure that satisfies a key double robustness property: if the assumptions are satisfied on the test data \textit{or} if the assumptions are violated on the test data in a similar way to the negative control data, then the procedure controls FDR.
+%\item As a secondary contribution, we propose a new class of fast and powerful test statistics for use in permutation and resampling-based CI tests, including the conditional randomization test, conditional permutation test, and local permutation test.
+
+\item Now that we have demonstrated the importance of negative controls, we explore how to use them effectively. We propose to use a doubly robust strategy for calibrating the test statistic. Let $\hat{\mathcal{L}}_n$ be the estimated empirical null distribution. Let $\mathcal{L}_t$ denote the theoretical null distribution that would result if the assumptions were satisfied. We want our procedure to control FDR for \textit{both} $\hat{\mathcal{L}}_n$ and $\mathcal{L}_t$.
+
+\item We commonly use qq-plots to assess distribution of the test statistic under the null hypothesis (typically a Gaussian distribution or uniform distribution over the integers $\{1, \dots, B\}$). 
+
+\end{itemize}
+
+\bibliographystyle{unsrt}
+\bibliography{/Users/timbarry/Documents/optionFiles/library.bib}
+
+\end{document}

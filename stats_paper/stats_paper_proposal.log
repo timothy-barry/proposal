@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  9 JAN 2022 17:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  13 JAN 2022 22:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -595,42 +595,47 @@ File: test_stat_fig_crop.pdf Graphic file (type pdf)
 Package pdftex.def Info: test_stat_fig_crop.pdf  used on input line 128.
 (pdftex.def)             Requested size: 187.89914pt x 227.63593pt.
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 138--152
+Underfull \hbox (badness 10000) in paragraph at lines 141--157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--152
+Underfull \hbox (badness 10000) in paragraph at lines 141--157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--152
+Underfull \hbox (badness 10000) in paragraph at lines 141--157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--152
+Underfull \hbox (badness 10000) in paragraph at lines 141--157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--152
+Underfull \hbox (badness 10000) in paragraph at lines 141--157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--152
+Underfull \hbox (badness 10000) in paragraph at lines 141--157
 
  []
 
-[7 <./test_stat_fig_crop.pdf>]
-Overfull \hbox (0.20825pt too wide) in paragraph at lines 156--156
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--157
+
+ []
+
+[7 <./test_stat_fig_crop.pdf>] [8]
+Overfull \hbox (0.20825pt too wide) in paragraph at lines 161--161
 [][]\OT1/cmr/m/n/12 Kuchibhotla, Arun Ku-mar (2020). ``Ex-change-abil-ity, Con-
 for-mal Pre-dic-tion, and Rank Tests''.
  []
 
-[8] [9] [10] [11] [12] (./stats_paper_proposal.aux)
+[9] [10] [11] [12] (./stats_paper_proposal.aux)
 Package logreq Info: Writing requests to 'stats_paper_proposal.run.xml'.
 \openout1 = `stats_paper_proposal.run.xml'.
 
@@ -658,7 +663,7 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on stats_paper_proposal.pdf (12 pages, 212272 bytes).
+Output written on stats_paper_proposal.pdf (12 pages, 212937 bytes).
 PDF statistics:
  123 PDF objects out of 1000 (max. 8388607)
  86 compressed objects within 1 object stream

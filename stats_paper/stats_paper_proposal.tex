@@ -132,7 +132,10 @@ Importantly, the above benefits can be mixed-and-matched at our discretion. Figu
 
 
 \section*{Direction 2: A class of fast and powerful test statistics for randomization tests}
-Coming soon...
+
+- OLS, ridge regression, additive splines for Gaussian responses
+- 
+
 
 \section*{Tertiary directions}
 We note several possible other directions that could be of interest.
@@ -149,6 +152,8 @@ We note several possible other directions that could be of interest.
 5. \textbf{The local holdout permutation test}. A simple, new conditional independence test that results from combining the holdout randomization test \parencite{Tansey2021a} with the local permutation test \parencite{Kim2021} is what I call the ``local holdout permutation test.'' The idea is as follows: (1) split the data in half, (2) train a classifier on the first half, (3) run the local permutation test on the second half, using empirical risk as the test statistic.
 \\ \\ \noindent
 6. \textbf{Extensions to other rank-based tests}. Can we extend the ideas here to other rank-based tests? For example, the Mann-Whitney U test, whose test statistics basically is a sum of ranks?
+\\ \\ \noindent
+7. Binning procedures: Bin the $\approx 1000$ resampled test statistics into $\approx$ 25 bin; compute a $p$-value, then use the BC procedure to control FDR. Data blurring to order $p$-values? Are there relevant references or methods in the robust statistics literature that we could use?
 
  % \textbf{NOTE}: I (Tim) know that Nav and Gene already are working on the double robustness problem. I do not want to duplicate effort!
 
