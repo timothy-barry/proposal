@@ -10,7 +10,7 @@
 \noindent
 Tim B.
 \begin{center}
-\textbf{The overlooked need for negative controls in conditional independence testing}
+\textbf{The need for negative controls in conditional independence testing}
 \end{center}
 
 \begin{itemize}
@@ -28,8 +28,6 @@ Tim B.
 \end{itemize}
 
  % Absent negative controls --- experimental or \textit{in silico} --- we have little reason to trust our discovery set.
-
-
 % \item In some problems \textit{experimental} negative controls are available; 
 % especially especially in high-multiplicity settings (i.e., settings in which there are thousands of hypotheses), where checking the assumptions for each of . 
 % Applying CI tests without assumption checking is unsatisfactory, especially in high-multiplicity settings.
@@ -38,9 +36,11 @@ Tim B.
 %\item We instead propose a simple procedure that satisfies a key double robustness property: if the assumptions are satisfied on the test data \textit{or} if the assumptions are violated on the test data in a similar way to the negative control data, then the procedure controls FDR.
 %\item As a secondary contribution, we propose a new class of fast and powerful test statistics for use in permutation and resampling-based CI tests, including the conditional randomization test, conditional permutation test, and local permutation test.
 
-\item Now that we have demonstrated the importance of negative controls, we explore how to use them effectively. We propose to use a doubly robust strategy for calibrating the test statistic. Let $\hat{\mathcal{L}}_n$ be the estimated empirical null distribution. Let $\mathcal{L}_t$ denote the theoretical null distribution that would result if the assumptions were satisfied. We want our procedure to control FDR for \textit{both} $\hat{\mathcal{L}}_n$ and $\mathcal{L}_t$.
+\item Now that we have demonstrated the importance of negative controls, we explore how to use them effectively. We propose to use a doubly robust strategy for calibrating the test statistic. Let $\hat{\mathcal{L}}_n$ be the estimated empirical null distribution. Let $\mathcal{L}_t$ denote the theoretical null distribution that would result if the assumptions were satisfied. We want our procedure to control FDR for \textit{both} $\hat{\mathcal{L}}_n$ and $\mathcal{L}_t$. This strategy avoids calibration against the empirical null distribution, which is fraught with difficulties.
 
-\item We commonly use qq-plots to assess distribution of the test statistic under the null hypothesis (typically a Gaussian distribution or uniform distribution over the integers $\{1, \dots, B\}$). 
+\item We commonly use qq-plots to assess the distribution of the test statistic under the null hypothesis (typically, this is a Gaussian distribution or uniform distribution over the integers $\{1, \dots, B\}$). QQ-plot checking is necessary for methods that operate on $p$-values (e.g., BH). We define an analogous kind of plot called a ``symmetry plot'' (or s-plot) for methods that operate more generally on symmetric test statistics (e.g., BC). Basically, the variable $X \sim \mathcal{L}_n$ should satisfy the property $-|X| = |X|.$ Therefore, let $x^{-}_{(1)}, x^{-}_{(2)}, \dots, x^{-}_{(r_1)}$ be the ordered test statistics that are less than zero (so that $x^{-}_{(1)} \geq x^{-}_{(2)} \geq \dots \geq x^{-}_{(r_1)}$), and let  $x^{+}_{(1)}, x^{+}_{(2)}, \dots, x^{+}_{(r_2)}$ be the ordered test statistics that are greater than zero $ x_{(1)}^+ \leq x_{(2)}^+ \leq \dots x_{(r_2)}^+.$ We plot these ordered quantities against one another.
+
+\item We can use symmetry-preserving transformations on $N(0,1)$ to improve the calibration of the empirical null distribution (e.g., binning). For example, there is not much mass in the tails. Thus, we can bin all observations less than $-s$ or greater than $s$ for some $s \in \R$ and get the tails looking more symmetric. We even can verify the improvement using an $s$-plot.
 
 \end{itemize}
 

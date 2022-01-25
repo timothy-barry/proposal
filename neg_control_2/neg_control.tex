@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx} 
+\usepackage{float}
+\usepackage[caption = false]{subfig}
+\usepackage[
+backend=biber,
+style=authoryear,
+maxcitenames=3,
+maxbibnames=3,
+uniquelist=false,
+backref=true,
+doi=false,
+isbn=false,
+url=false,
+eprint=false,
+backref=false
+]{biblatex}
+\addbibresource{/Users/timbarry/optionFiles/tims_proposal.bib}
+
+\begin{document}
+	\noindent
+	Tim B.
+	\begin{center}
+		\textbf{The importance of negative controls in conditional independence testing}
+	\end{center}
+
+Conditional independence (CI) tests are tests of association between two variables $X$ and $Y$ (e.g., a genetic variant and a phenotype) while controlling for a vector of confounders $Z$ (e.g., population structure). CI tests are among the most fundamental and widely-used hypothesis tests in statistics and the sciences. Despite their importance and popularity, CI tests are hard to conduct: recent theoretical results have revealed that assumption-free CI testing is fundamentally impossible (except in the special case where $Z$ is discrete and takes a small number of values; \cite{Kim2021,Shah2020}). Unfortunately, the assumptions that underly CI tests typically are not checked in practice. This is not due to negligence; as we will see, checking the assumptions of CI tests is fraught with difficulties, especially in high dimensions. We therefore find ourselves faced with an apparent paradox: (i) CI testing is of fundamental importance; (ii) we must check the assumptions of CI tests in applying CI tests to data (else, we are not justified in believing the results); and (iii) checking the assumptions of CI tests is challenging.
+
+We aim to address this challenge in the contemporary ``high-multiplicity'' setting in which we test thousands or tens of thousands (or more) of hypotheses with the objective of producing a discovery set that controls the false discovery rate (FDR; \cite{Benjamini1995, Li2021}). Our core thesis is that ``negative control data'' -- example data for which the null hypothesis is known to be true, roughly  -- are crucially important (and in some cases \textit{required}) for CI testing with FDR control.
+
+After briefly summarizing the vast landscape of CI testing procedures, we argue that negative controls play (or ought to play) a crucial role in FDR-controlled CI testing. We describe two broad types of negative controls --- ``experimental'' and ``in silico'' --- and argue that, although the former are superior statistically, the latter are more widely available and can be constructed directly from the data in many applications. Next, we introduce several ideas for working effectively with negative control data for the purposes of controlling FDR. In particular, we propose to calibrate the testing procedure against \textit{both} the empirical negative control distribution \textit{and} the theoretical null distribution that would obtain if the assumptions of the testing procedure were satisfied; this approach satisfies an appealing double-robustness property. Also, we introduce a practical method for assessing whether a given testing procedure is robust to inflation observed in the tails of the null distribution. Finally, to facilitate these analyses, we describe the ``symmetry plot,'' a nonparametric analogue of the commonly-used quantile-quantile plot for assessing calibration.
+
+As an auxiliary contribution, we introduce a new class of fast and powerful Gaussian test statistics compatible with a broad range of existing CI testing algorithms, including the conditional randomization test, the conditional permutation test, and the local permutation test \parencite{Candes2018a,Berrett2020,Kim2021}. These test statistics involve repeatedly fitting OLS, ridge regression, or additive spline models to the permuted (or resampled) data via an online QR decomposition-based procedure.
+
+% Our core thesis is that CI testing as it is typically formulated is in some sense ``underdetermined;'' to rigorously solve the CI testing problem in the high multiplicity-setting, we must inject ``additional information'' into the system in the form of negative controls 
+
+\printbibliography
+ 
+\end{document}
