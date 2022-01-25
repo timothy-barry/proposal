@@ -1975,8 +1975,8 @@
     <bcf:datasource type="file" datatype="bibtex">/Users/timbarry/optionFiles/tims_proposal.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Kim2021</bcf:citekey>
     <bcf:citekey order="1">Shah2020</bcf:citekey>
+    <bcf:citekey order="1">Kim2021</bcf:citekey>
     <bcf:citekey order="2">Benjamini1995</bcf:citekey>
     <bcf:citekey order="2">Li2021</bcf:citekey>
     <bcf:citekey order="3">Candes2018a</bcf:citekey>

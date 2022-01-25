@@ -1,17 +1,17 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'neg_control.blg'
-[35] biber-darwin:313> INFO - === Mon Jan 24, 2022, 20:26:31
-[56] Biber.pm:371> INFO - Reading 'neg_control.bcf'
-[135] Biber.pm:857> INFO - Found 6 citekeys in bib section 0
-[146] Biber.pm:3976> INFO - Processing section 0
-[156] Biber.pm:4136> INFO - Looking for bibtex format file '/Users/timbarry/optionFiles/tims_proposal.bib' for section 0
-[165] bibtex.pm:1500> INFO - LaTeX decoding ...
-[332] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/timbarry/optionFiles/tims_proposal.bib'
-[371] Utils.pm:193> WARN - BibTeX subsystem: /var/folders/h6/pt59hmwd7rqb3jqfzwh0hlth0000gn/T/k4GcSvcDks/tims_proposal.bib_6150.utf8, line 6, warning: 176 characters of junk seen at toplevel
-[384] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[37] biber-darwin:313> INFO - === Mon Jan 24, 2022, 22:20:19
+[57] Biber.pm:371> INFO - Reading 'neg_control.bcf'
+[137] Biber.pm:857> INFO - Found 7 citekeys in bib section 0
+[148] Biber.pm:3976> INFO - Processing section 0
+[158] Biber.pm:4136> INFO - Looking for bibtex format file '/Users/timbarry/optionFiles/tims_proposal.bib' for section 0
+[166] bibtex.pm:1500> INFO - LaTeX decoding ...
+[326] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/timbarry/optionFiles/tims_proposal.bib'
+[371] Utils.pm:193> WARN - BibTeX subsystem: /var/folders/h6/pt59hmwd7rqb3jqfzwh0hlth0000gn/T/WKVzNgdLCT/tims_proposal.bib_6780.utf8, line 6, warning: 176 characters of junk seen at toplevel
 [384] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[384] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 [384] Biber.pm:3804> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[385] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[384] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
 [396] bbl.pm:617> INFO - Writing 'neg_control.bbl' with encoding 'UTF-8'
-[403] bbl.pm:720> INFO - Output to neg_control.bbl
+[402] bbl.pm:720> INFO - Output to neg_control.bbl
 [403] Biber.pm:110> INFO - WARNINGS: 1
