@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  25 JAN 2022 12:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  25 JAN 2022 23:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -481,27 +481,27 @@ Package biblatex Info: Reference section=0 on input line 22.
 Package biblatex Info: Reference segment=0 on input line 22.
  [1
 
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
- (./neg_control.aux)
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./
+neg_control.aux)
 Package logreq Info: Writing requests to 'neg_control.run.xml'.
 \openout1 = `neg_control.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9616 strings out of 492649
- 167902 string characters out of 6129622
- 588279 words of memory out of 5000000
- 13423 multiletter control sequences out of 15000+600000
+ 9606 strings out of 492649
+ 167618 string characters out of 6129622
+ 587248 words of memory out of 5000000
+ 13413 multiletter control sequences out of 15000+600000
  5198 words of font info for 19 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,4n,52p,1950b,1443s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on neg_control.pdf (3 pages, 51459 bytes).
+Output written on neg_control.pdf (2 pages, 50895 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 23 PDF objects out of 1000 (max. 8388607)
+ 15 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
