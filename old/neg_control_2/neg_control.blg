@@ -1,0 +1,17 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[1] Config.pm:305> INFO - Logfile is 'neg_control.blg'
+[37] biber-darwin:313> INFO - === Fri Jan 28, 2022, 00:07:29
+[62] Biber.pm:371> INFO - Reading 'neg_control.bcf'
+[140] Biber.pm:857> INFO - Found 7 citekeys in bib section 0
+[151] Biber.pm:3976> INFO - Processing section 0
+[163] Biber.pm:4136> INFO - Looking for bibtex format file '/Users/timbarry/optionFiles/tims_proposal.bib' for section 0
+[171] bibtex.pm:1500> INFO - LaTeX decoding ...
+[332] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/timbarry/optionFiles/tims_proposal.bib'
+[381] Utils.pm:193> WARN - BibTeX subsystem: /var/folders/h6/pt59hmwd7rqb3jqfzwh0hlth0000gn/T/SxLTO92RQM/tims_proposal.bib_12497.utf8, line 6, warning: 176 characters of junk seen at toplevel
+[396] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[396] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[396] Biber.pm:3804> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[396] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[412] bbl.pm:617> INFO - Writing 'neg_control.bbl' with encoding 'UTF-8'
+[419] bbl.pm:720> INFO - Output to neg_control.bbl
+[419] Biber.pm:110> INFO - WARNINGS: 1

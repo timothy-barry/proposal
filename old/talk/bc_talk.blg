@@ -1,0 +1,13 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[1] Config.pm:305> INFO - Logfile is 'bc_talk.blg'
+[35] biber-darwin:313> INFO - === Sat Feb  5, 2022, 14:04:18
+[54] Biber.pm:371> INFO - Reading 'bc_talk.bcf'
+[125] Biber.pm:857> INFO - Found 3 citekeys in bib section 0
+[137] Biber.pm:3976> INFO - Processing section 0
+[145] Biber.pm:4136> INFO - Looking for bibtex format file '/Users/timbarry/optionFiles/tims_proposal.bib' for section 0
+[153] bibtex.pm:1500> INFO - LaTeX decoding ...
+[314] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/timbarry/optionFiles/tims_proposal.bib'
+[342] Utils.pm:193> WARN - BibTeX subsystem: /var/folders/h6/pt59hmwd7rqb3jqfzwh0hlth0000gn/T/RNsYXLjdYx/tims_proposal.bib_14561.utf8, line 6, warning: 176 characters of junk seen at toplevel
+[342] Utils.pm:209> ERROR - BibTeX subsystem: /var/folders/h6/pt59hmwd7rqb3jqfzwh0hlth0000gn/T/RNsYXLjdYx/tims_proposal.bib_14561.utf8, line 363, syntax error: found "testing", expected ","
+[342] Biber.pm:110> INFO - WARNINGS: 1
+[342] Biber.pm:114> INFO - ERRORS: 1

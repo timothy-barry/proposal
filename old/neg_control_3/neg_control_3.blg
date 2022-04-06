@@ -1,0 +1,5 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'neg_control_3.blg'
+[29] biber-darwin:313> INFO - === Tue Feb  1, 2022, 21:21:45
+[147] Utils.pm:209> ERROR - Cannot find control file 'neg_control_3.bcf'! - Did latex run successfully on your .tex file before you ran biber?
+[148] Biber.pm:114> INFO - ERRORS: 1

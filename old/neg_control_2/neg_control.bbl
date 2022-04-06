@@ -1,0 +1,378 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{Benjamini1995}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=2bf06df9b6fb1b6a6811f2965ef58db2}{%
+           family={Benjamini},
+           familyi={B\bibinitperiod},
+           given={Yoav},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=486dfb83d695169656e5706b50266208}{%
+           family={Hochberg},
+           familyi={H\bibinitperiod},
+           given={Yosef},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0ba4be1a60b0ea36e468eb3f8db88a98}
+      \strng{fullhash}{0ba4be1a60b0ea36e468eb3f8db88a98}
+      \strng{bibnamehash}{0ba4be1a60b0ea36e468eb3f8db88a98}
+      \strng{authorbibnamehash}{0ba4be1a60b0ea36e468eb3f8db88a98}
+      \strng{authornamehash}{0ba4be1a60b0ea36e468eb3f8db88a98}
+      \strng{authorfullhash}{0ba4be1a60b0ea36e468eb3f8db88a98}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The common approach to the multiplicity problem calls for controlling the familywise error rate (FWER). This approach, though, has faults, and we point out a few. A different approach to problems of multiple significance testing is presented. It calls for controlling the expected proportion of falsely rejected hypotheses -the false discovery rate. This error rate is equivalent to the FWER when all hypotheses are true but is smaller otherwise. There- fore, in problems where the control of the false discovery rate rather than that of the FWER is desired, there is potential for a gain in power. A simple sequential Bonferroni- type procedure is proved to control the false discovery rate for independent test statistics, and a simulation study shows that the gain in power is substantial. The use of the new procedure}
+      \field{journaltitle}{Journal of the Royal Statistical Society}
+      \field{number}{1}
+      \field{title}{{Controlling the False Discovery Rate : A Practical and Powerful Approach to Multiple Testing}}
+      \field{volume}{57}
+      \field{year}{1995}
+      \field{pages}{289\bibrangedash 300}
+      \range{pages}{12}
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/bh{\_}95.pdf:pdf
+      \endverb
+      \keyw{multiple testing}
+    \endentry
+    \entry{Berrett2020}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,uniquepart=base,hash=da2225ed6f5194fdb7864fb6918e5562}{%
+           family={Berrett},
+           familyi={B\bibinitperiod},
+           given={Thomas\bibnamedelima B.},
+           giveni={T\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=141a1e7404c5b53546fb09821c56717a}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=826fc96de04a5307c256bfb0b6202e0f}{%
+           family={Barber},
+           familyi={B\bibinitperiod},
+           given={Rina\bibnamedelima Foygel},
+           giveni={R\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=f571f0f9e4636dc38784d87fb2be633a}{%
+           family={Samworth},
+           familyi={S\bibinitperiod},
+           given={Richard\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6551256fb2bcc96d56687bf81cf43fb7}
+      \strng{fullhash}{b075a5ce38df23884ab4041806a9b299}
+      \strng{bibnamehash}{6551256fb2bcc96d56687bf81cf43fb7}
+      \strng{authorbibnamehash}{6551256fb2bcc96d56687bf81cf43fb7}
+      \strng{authornamehash}{6551256fb2bcc96d56687bf81cf43fb7}
+      \strng{authorfullhash}{b075a5ce38df23884ab4041806a9b299}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We propose a general new method, the conditional permutation test, for testing the conditional independence of variables X and Y given a potentially high dimensional random vector Z that may contain confounding factors. The test permutes entries of X non-uniformly, to respect the existing dependence between X and Z and thus to account for the presence of these confounders. Like the conditional randomization test of Cand{è}s and co-workers in 2018, our test relies on the availability of an approximation to the distribution of X|Z—whereas their test uses this estimate to draw new X-values, for our test we use this approximation to design an appropriate non-uniform distribution on permutations of the X-values already seen in the true data. We provide an efficient Markov chain Monte Carlo sampler for the implementation of our method and establish bounds on the type I error in terms of the error in the approximation of the conditional distribution of X|Z, finding that, for the worst-case test statistic, the inflation in type I error of the conditional permutation test is no larger than that of the conditional randomization test. We validate these theoretical results with experiments on simulated data and on the Capital Bikeshare data set.}
+      \field{eprinttype}{arXiv}
+      \field{issn}{14679868}
+      \field{journaltitle}{Journal of the Royal Statistical Society. Series B: Statistical Methodology}
+      \field{number}{1}
+      \field{title}{{The conditional permutation test for independence while controlling for confounders}}
+      \field{volume}{82}
+      \field{year}{2020}
+      \field{pages}{175\bibrangedash 197}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1111/rssb.12340
+      \endverb
+      \verb{eprint}
+      \verb 1807.05405
+      \endverb
+      \verb{file}
+      \verb :Users/timbarry/Library/Application Support/Mendeley Desktop/Downloaded/Berrett et al. - 2020 - The conditional permutation test for independence while controlling for confounders.pdf:pdf
+      \endverb
+      \keyw{Conditional independence testing,Exchangeability,MX,Model misspecification,Model-X knockoffs,Permutation tests,Semisupervised learning}
+    \endentry
+    \entry{Candes2018a}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=1,uniquepart=given,hash=212891f9c14b24a5e86eafd8500304fa}{%
+           family={Cand{è}s},
+           familyi={C\bibinitperiod},
+           given={Emmanuel},
+           giveni={E\bibinitperiod},
+           givenun=1}}%
+        {{uniquename=0,uniquepart=base,hash=84e992947ee6777f06640104c0dbbf0e}{%
+           family={Fan},
+           familyi={F\bibinitperiod},
+           given={Yingying},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a1ab16be9c4f427e777468e60b1edaa0}{%
+           family={Janson},
+           familyi={J\bibinitperiod},
+           given={Lucas},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=0f66fa2ea251428c6943aaa92cd79812}{%
+           family={Lv},
+           familyi={L\bibinitperiod},
+           given={Jinchi},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{24caf3e0ebaf80f34100d2d0fbc9c276}
+      \strng{fullhash}{49700fd541bc866b412574c6ed09075a}
+      \strng{bibnamehash}{24caf3e0ebaf80f34100d2d0fbc9c276}
+      \strng{authorbibnamehash}{24caf3e0ebaf80f34100d2d0fbc9c276}
+      \strng{authornamehash}{24caf3e0ebaf80f34100d2d0fbc9c276}
+      \strng{authorfullhash}{49700fd541bc866b412574c6ed09075a}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Many contemporary large-scale applications involve building interpretable models linking a large set of potential covariates to a response in a non-linear fashion, such as when the response is binary. Although this modelling problem has been extensively studied, it remains unclear how to control the fraction of false discoveries effectively even in high dimensional logistic regression, not to mention general high dimensional non-linear models. To address such a practical problem, we propose a new framework of ‘model-X' knockoffs, which reads from a different perspective the knockoff procedure that was originally designed for controlling the false discovery rate in linear models. Whereas the knockoffs procedure is constrained to homoscedastic linear models with n⩾p, the key innovation here is that model-X knockoffs provide valid inference from finite samples in settings in which the conditional distribution of the response is arbitrary and completely unknown. Furthermore, this holds no matter the number of covariates. Correct inference in such a broad setting is achieved by constructing knockoff variables probabilistically instead of geometrically. To do this, our approach requires that the covariates are random (independent and identically distributed rows) with a distribution that is known, although we provide preliminary experimental evidence that our procedure is robust to unknown or estimated distributions. To our knowledge, no other procedure solves the controlled variable selection problem in such generality but, in the restricted settings where competitors exist, we demonstrate the superior power of knockoffs through simulations. Finally, we apply our procedure to data from a case–control study of Crohn's disease in the UK, making twice as many discoveries as the original analysis of the same data.}
+      \field{eprinttype}{arXiv}
+      \field{issn}{14679868}
+      \field{journaltitle}{Journal of the Royal Statistical Society. Series B: Statistical Methodology}
+      \field{number}{3}
+      \field{title}{{Panning for gold: ‘model-X' knockoffs for high dimensional controlled variable selection}}
+      \field{volume}{80}
+      \field{year}{2018}
+      \field{pages}{551\bibrangedash 577}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1111/rssb.12265
+      \endverb
+      \verb{eprint}
+      \verb 1610.02351
+      \endverb
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/candes{\_}gold.pdf:pdf
+      \endverb
+      \keyw{False discovery rate,Generalized linear models,Genomewide association study,Knockoff filter,Logistic regression,MX,Markov blanket,Testing for conditional independence in non-linear}
+    \endentry
+    \entry{Dobriban2018}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=facc1c652916b234e238c4cd8bb5ff9d}{%
+           family={Dobriban},
+           familyi={D\bibinitperiod},
+           given={Edgar},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=e22c2c3bb1bd12e43f46c07ea788b581}{%
+           family={Wager},
+           familyi={W\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{688102d4d1e413cbf6ceaa15de3a5f4e}
+      \strng{fullhash}{688102d4d1e413cbf6ceaa15de3a5f4e}
+      \strng{bibnamehash}{688102d4d1e413cbf6ceaa15de3a5f4e}
+      \strng{authorbibnamehash}{688102d4d1e413cbf6ceaa15de3a5f4e}
+      \strng{authornamehash}{688102d4d1e413cbf6ceaa15de3a5f4e}
+      \strng{authorfullhash}{688102d4d1e413cbf6ceaa15de3a5f4e}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We provide a unified analysis of the predictive risk of ridge regression and regularized discriminant analysis in a dense random effects model. We work in a high-dimensional asymptotic regime where p,n →∞ and p/n→$\gamma$ {>} 0, and allow for arbitrary covariance among the features. For both methods, we provide an explicit and efficiently computable expression for the limiting predictive risk, which depends only on the spectrum of the feature-covariance matrix, the signal strength and the aspect ratio $\gamma$. Especially in the case of regularized discriminant analysis, we find that predictive accuracy has a nuanced dependence on the eigenvalue distribution of the covariance matrix, suggesting that analyses based on the operator norm of the covariance matrix may not be sharp. Our results also uncover an exact inverse relation between the limiting predictive risk and the limiting estimation risk in high-dimensional linear models. The analysis builds on recent advances in random matrix theory.}
+      \field{eprinttype}{arXiv}
+      \field{issn}{00905364}
+      \field{journaltitle}{Annals of Statistics}
+      \field{number}{1}
+      \field{title}{{High-dimensional asymptotics of prediction: Ridge regression and classification}}
+      \field{volume}{46}
+      \field{year}{2018}
+      \field{pages}{247\bibrangedash 279}
+      \range{pages}{33}
+      \verb{doi}
+      \verb 10.1214/17-AOS1549
+      \endverb
+      \verb{eprint}
+      \verb 1507.03003
+      \endverb
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/dobriban{\_}2018.pdf:pdf
+      \endverb
+      \keyw{High-dimensional asymptotics,Prediction error,Random matrix theory,Regularized discriminant analysis,Ridge regression,additive and high-dimensional models}
+    \endentry
+    \entry{Kim2021}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,uniquepart=base,hash=c9cba545a9bc42e4e5d7b3729405b106}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Ilmun},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=212c3c3b0ca468d7380aba329711b584}{%
+           family={Neykkov},
+           familyi={N\bibinitperiod},
+           given={Matey},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=3c8c7cdc21150ce96c803d9ce83c36ba}{%
+           family={Balakrishnan},
+           familyi={B\bibinitperiod},
+           given={Sivaraman},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=6b27f4592197d058b81cb25b0b285942}{%
+           family={Wasserman},
+           familyi={W\bibinitperiod},
+           given={Larry},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ba62f90449723d499badce6c4d213d5f}
+      \strng{fullhash}{0e05a3ed12b0f16b45c53a628f65c72c}
+      \strng{bibnamehash}{ba62f90449723d499badce6c4d213d5f}
+      \strng{authorbibnamehash}{ba62f90449723d499badce6c4d213d5f}
+      \strng{authornamehash}{ba62f90449723d499badce6c4d213d5f}
+      \strng{authorfullhash}{0e05a3ed12b0f16b45c53a628f65c72c}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{title}{{Local permutation tests for conditional independence}}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb arXiv:2112.11666v1
+      \endverb
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/kim2021.pdf:pdf
+      \endverb
+      \keyw{CI testing}
+    \endentry
+    \entry{Li2021}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=39c12931ce1d8a7259be450b9b698526}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Shuangning},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=1,uniquepart=given,hash=47e52e423450f79070607f61a9f53828}{%
+           family={Cand{è}s},
+           familyi={C\bibinitperiod},
+           given={Emmanuel\bibnamedelima J.},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{7d372cb07f9db27e5e042fea0fcf1c68}
+      \strng{fullhash}{7d372cb07f9db27e5e042fea0fcf1c68}
+      \strng{bibnamehash}{7d372cb07f9db27e5e042fea0fcf1c68}
+      \strng{authorbibnamehash}{7d372cb07f9db27e5e042fea0fcf1c68}
+      \strng{authornamehash}{7d372cb07f9db27e5e042fea0fcf1c68}
+      \strng{authorfullhash}{7d372cb07f9db27e5e042fea0fcf1c68}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper introduces the sequential CRT, which is a variable selection procedure that combines the conditional randomization test (CRT) and Selective SeqStep+. Valid p-values are constructed via the flexible CRT, which are then ordered and passed through the selective SeqStep+ filter to produce a list of discoveries. We develop theory guaranteeing control on the false discovery rate (FDR) even though the p-values are not independent. We show in simulations that our novel procedure indeed controls the FDR and are competitive with -- and sometimes outperform -- state-of-the-art alternatives in terms of power. Finally, we apply our methodology to a breast cancer dataset with the goal of identifying biomarkers associated with cancer stage.}
+      \field{eprinttype}{arXiv}
+      \field{title}{{Deploying the Conditional Randomization Test in High Multiplicity Problems}}
+      \field{year}{2021}
+      \field{pages}{1\bibrangedash 43}
+      \range{pages}{43}
+      \verb{eprint}
+      \verb 2110.02422
+      \endverb
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/Li2021.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2110.02422
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2110.02422
+      \endverb
+      \keyw{MX}
+    \endentry
+    \entry{Shah2020}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=6b2da2d11d2ab28853c86f9da5ac8803}{%
+           family={Shah},
+           familyi={S\bibinitperiod},
+           given={Rajen\bibnamedelima D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=b50a0fee091540dedaefacc234101037}{%
+           family={Peters},
+           familyi={P\bibinitperiod},
+           given={Jonas},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8e464cad6c499e26476be2f48afd0f91}
+      \strng{fullhash}{8e464cad6c499e26476be2f48afd0f91}
+      \strng{bibnamehash}{8e464cad6c499e26476be2f48afd0f91}
+      \strng{authorbibnamehash}{8e464cad6c499e26476be2f48afd0f91}
+      \strng{authornamehash}{8e464cad6c499e26476be2f48afd0f91}
+      \strng{authorfullhash}{8e464cad6c499e26476be2f48afd0f91}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{It is a common saying that testing for conditional independence, that is, testing whether whether two random vectors X and Y are independent, given Z, is a hard statistical problem if Z is a continuous random variable (or vector). In this paper, we prove that conditional independence is indeed a particularly difficult hypothesis to test for. Valid statistical tests are required to have a size that is smaller than a pre-defined significance level, and different tests usually have power against a different class of alternatives. We prove that a valid test for conditional independence does not have power against any alternative. Given the nonexistence of a uniformly valid conditional independence test, we argue that tests must be designed so their suitability for a particular problem may be judged easily. To address this need, we propose in the case where X and Y are univariate to nonlinearly regress X on Z, and Y on Z and then compute a test statistic based on the sample covariance between the residuals, which we call the generalised covariance measure (GCM). We prove that validity of this form of test relies almost entirely on the weak requirement that the regression procedures are able to estimate the conditional means X given Z, and Y given Z, at a slow rate. We extend the methodology to handle settings where X and Y may be multivariate or even high dimensional. While our general procedure can be tailored to the setting at hand by combining it with any regression technique, we develop the theoretical guarantees for kernel ridge regression. A simulation study shows that the test based on GCM is competitive with state of the art conditional independence tests. Code is available as the R package GeneralisedCovarianceMeasure on CRAN.}
+      \field{eprinttype}{arXiv}
+      \field{issn}{21688966}
+      \field{journaltitle}{Annals of Statistics}
+      \field{number}{3}
+      \field{title}{{The hardness of conditional independence testing and the generalised covariance measure}}
+      \field{volume}{48}
+      \field{year}{2020}
+      \field{pages}{1514\bibrangedash 1538}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1214/19-AOS1857
+      \endverb
+      \verb{eprint}
+      \verb 1804.07203
+      \endverb
+      \verb{file}
+      \verb :Users/timbarry/research{\_}papers/shah2018.pdf:pdf
+      \endverb
+      \keyw{CI testing,Conditional independence,Hypothesis testing,Kernel ridge regression,Testability,Wild bootstrap}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
